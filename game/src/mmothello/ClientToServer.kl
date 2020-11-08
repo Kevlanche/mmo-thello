@@ -1,0 +1,6 @@
+
+struct OnClick: int x, int y;
+union ClientToServer {
+  OnClick onClick;
+}
+

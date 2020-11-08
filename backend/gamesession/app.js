@@ -3,6 +3,7 @@
 
 const AWS = require('aws-sdk');
 const ws = require('ws');
+const { Server } = require('./Server');
 
 const ddb = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10', region: process.env.AWS_REGION });
 
@@ -63,23 +64,80 @@ exports.handler = async event => {
   const sleep = nextSessionId - Date.now();
   console.log('Sleeping for', sleep, 'ms');
 
+
   console.log('connecting to websocket...');
   const socket = new ws("wss://qnrk3f4ghb.execute-api.eu-central-1.amazonaws.com/Prod?agent=kevlanchebot", {
     perMessageDeflate: false, // TODO needed?
-
   });
-  socket.on('open', function open() {
-    console.log('websocket connected!');
-    // socket.send(JSON.stringify({ 'action': 'sendmessage', 'type': 'started', sessionId }));
-  });
+  // socket.binaryType = 'arraybuffer';
 
-  socket.on('message', function incoming(data) {
-    console.log('onMessage:', data);
-    const { target, salt } = JSON.parse(data);
-    if (target === 'server') {
+  const incomingMessages = [];
+  let numberOfPlayers = 0;
+  const pidToColors = {};
+  let lastReceivedMessage = null;
+  const pidToLastIncomsingKlMessageTime = {};
+  const server = Server({
+    postMessage: data => {
+      console.log('outbound payload PLAIN:', data);
+      const payload = new TextDecoder().decode(data);
+      console.log('outbound payload ENCODED:', payload);
       socket.send(JSON.stringify({
         action: 'sendmessage',
         target: 'client',
+        type: 'kl',
+
+        payload,
+      }));
+    },
+    receiveIncomingMessage: () => {
+      const ret = incomingMessages.shift() || null;
+      lastReceivedMessage = ret;
+      return ret && ret.data;
+    },
+    getLastIncomingMessageOwner: () => lastReceivedMessage && lastReceivedMessage.pid,
+  });
+  socket.on('open', function open() {
+    console.log('websocket connected!');
+    // TODO maybe send greeting to all clients
+  });
+
+  socket.on('message', function incoming(data) {
+    const { target, salt, type, payload, pid } = JSON.parse(data);
+    if (target !== 'server') {
+      return;
+    }
+
+    if (!pidToColors[pid]) {
+      ++numberOfPlayers;
+      pidToColors[pid] = numberOfPlayers;
+    }
+
+    if (type === 'kl') {
+      const lastMessage = pidToLastIncomsingKlMessageTime[pid];
+      if (lastMessage && (Date.now() - lastMessage) <= 5000) {
+        // Reject message due to "slow mode"
+        // return;
+      }
+      pidToLastIncomsingKlMessageTime[pid] = Date.now();
+      incomingMessages.push({
+        data: new TextEncoder().encode(payload),
+        pid: pidToColors[pid],
+      });
+      try {
+        server.call();
+      } catch (e) {
+        console.warn('Err on server side:', e);
+        throw e;
+      }
+    } else if (type === 'meta') {
+      // const now = Date.now();
+      // const sessionId = now - (now % sessionLengthMs);
+
+      socket.send(JSON.stringify({
+        action: 'sendmessage',
+        target: 'client',
+        type: 'meta',
+        time: Date.now() % sessionId,
         sessionId,
         salt,
         managerSecret,
@@ -88,15 +146,19 @@ exports.handler = async event => {
   });
 
   // socket.onopen
+  const autoRunner = setInterval(() => {
+    server.call();
+  }, 100);
 
   await new Promise(res => setTimeout(res, sleep));
 
-  console.log('Sleep done.. deleting mgrKey');
+  clearInterval(autoRunner);
+
   await s3.deleteObject({
     Bucket: process.env.BUCKET_NAME,
     Key: managerKey
   }).promise();
-  console.log('Sleep done.. deleted mgrKey, closing', sessionId);
+  console.log('Session', sessionId, 'done, closing');
 
   socket.close();
 

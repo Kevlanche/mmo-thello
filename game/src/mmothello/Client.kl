@@ -1,0 +1,60 @@
+#include mmothello/[
+  ClientToServer,
+  ServerToClient,
+  Board
+]
+
+struct Click: int x, int y;
+
+binding ClientBinding {
+  Click? getClick();
+  void? postToServer(ClientToServer msg);
+  ServerToClient? getIncomingMessage();
+  void? setBoard(int x, int y, byte color);
+}
+
+worker Client {
+  ClientBinding~ bind;
+  Board lastBoard;
+
+  new(ClientBinding~ bind)
+    lastBoard: new();
+
+  void? handleIncomingMessages~() {
+    while (true) {
+      $msg = bind.getIncomingMessage() ?: return;
+      if ($board = msg.refreshBoard) {
+
+        for ($x = 0; < 16) {
+          for ($y = 0; < 16) {
+            $known = lastBoard.get(x, y);
+            $incoming = board.get(x, y);
+            if (known != incoming) {
+              bind.setBoard(x, y, incoming);
+            }
+          }
+        }
+        lastBoard = board;
+      } else {
+        trace "ERR unknown message type";
+      }
+    }
+  }
+
+  void? update~() {
+    handleIncomingMessages();
+
+    if ($cl = bind.getClick()) {
+      trace "Got click @ $(cl.x) | $(cl.y)";
+      bind.postToServer(.newOnClick(new(cl.x, cl.y)));
+    }
+  }
+
+  static .void()? game(ClientBinding~ bind) {
+    trace "Client started";
+    Client~ cl = new(bind);
+    return () -> {
+      cl.update();
+    };
+  }
+}

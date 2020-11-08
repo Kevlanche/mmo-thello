@@ -22,7 +22,7 @@ exports.handler = async event => {
     endpoint: event.requestContext.domainName + '/' + event.requestContext.stage
   });
 
-  const parsed = JSON.parse(event.body);
+  // const parsed = JSON.parse(event.body);
   // const { x, y, col } = parsed;
   // if (x === undefined || y === undefined || col === undefined) {
   //   return { statusCode: 400, body: 'BadRequest' };
@@ -51,10 +51,11 @@ exports.handler = async event => {
   // }).promise();
 
   // const postData = pxData.join('');
+  // console.log('SendMessage w/ body:', event.body);
 
   const postCalls = connectionData.Items.map(async ({ connectionId }) => {
     try {
-      await apigwManagementApi.postToConnection({ ConnectionId: connectionId, Data: JSON.stringify(parsed) }).promise();
+      await apigwManagementApi.postToConnection({ ConnectionId: connectionId, Data: event.body }).promise();
     } catch (e) {
       if (e.statusCode === 410) {
         console.log(`Found stale connection, deleting ${connectionId}`);

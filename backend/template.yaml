@@ -31,7 +31,8 @@ Resources:
     Properties:
       Name: MmothelloGameWebsocket
       ProtocolType: WEBSOCKET
-      RouteSelectionExpression: "$request.body.action"
+      RouteSelectionExpression: "sendmessage"
+      # RouteSelectionExpression: "$request.body.action"
   ConnectRoute:
     Type: AWS::ApiGatewayV2::Route
     Properties:

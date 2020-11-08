@@ -1,0 +1,24 @@
+
+
+* When a new player clicks, broadcast a welcome message
+
+* Actually implement game rules
+  * Check if it is a legal placement
+    * If no -> ?????, ignore?
+    * If yes, flip pieces!
+
+0,0
+xxxxxxxxxxx
+xxxxxxxxxxx
+xxxxxxx+xxx
+xxxxxxxxxxx
+xxxxxxxxxxx
+xxxxxxx+xxx
+            16,16
+
+>> * Add spam limit timer
+  * server side ✅
+  * client side
+
+
+* Implement give command

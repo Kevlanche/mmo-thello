@@ -5,6 +5,7 @@
   ],
   "x-imports": true,
   "modules": [
-    "mmothello/Game.kl/.game"
+    "mmothello/Client.kl/.game",
+    "mmothello/Server.kl/.game"
   ]
 }

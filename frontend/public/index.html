@@ -56,8 +56,8 @@
         grid-area: GAME;
         border: 1px solid blue;
         display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: repeat(16, 1fr);
+        grid-template-rows: repeat(16, 1fr);
         width: 32rem;
         height: 32rem;
       }
@@ -111,8 +111,28 @@
       }
 
       .cell {
-        border: 1px solid gray;
-        margin: 0.125rem;
+        border-top: 1px solid gray;
+        border-left: 1px solid gray;
+        /* margin: 0.1px; */
+      }
+
+      .cell.inner {
+        background: #ddd;
+      }
+
+      .cell.filled::after {
+        content: ' ';
+        border: 1px solid var(--data-color);
+        background: var(--data-color);
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        display: block;
+        border-radius: 50%;
+
+      }
+
+      .cell:hover {
+        background: #ccc;
       }
 
       footer,

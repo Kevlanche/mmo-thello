@@ -1,0 +1,9 @@
+
+struct Board {
+  Buffer<byte>~ colors;
+
+  new() colors: new(16 * 16);
+
+  void set~(int x, int y, byte color): colors.set(x + (y * 16), color);
+  byte get(int x, int y): colors.get(x + (y * 16));
+}

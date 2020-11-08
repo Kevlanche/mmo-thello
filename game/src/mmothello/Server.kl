@@ -1,0 +1,120 @@
+#include mmothello/[
+  ClientToServer,
+  ServerToClient,
+  Board
+]
+
+binding ServerBinding {
+  ClientToServer? receiveIncomingMessage();
+  byte? getLastIncomingMessageOwner();
+  void? postMessage(ServerToClient msg);
+}
+
+worker Server {
+  ServerBinding~ bind;
+  Board~ board;
+  int seed;
+
+  new(ServerBinding~ bind)
+    board: new()
+    , seed: 133713337
+    ;
+
+  bool hasAnyPieces(byte player) {
+    for ($x = 0; < 16) {
+      for ($y = 0; < 16) {
+        if (board.get(x, y) == player): return true;
+      }
+    }
+    return false;
+  }
+
+  bool isLegalMove~(int x, int y, byte player) {
+    if (hasAnyPieces(player) == false) {
+      return (x >= 4) && (x <= 11) && (y >= 4) && (y <= 11);
+    }
+
+    .bool(int, int) doSearch = (dx, dy) -> {
+      if (board.get(x + dx, y + dy) == 0b) {
+        return false;
+      }
+      return searchAndFlip(x + (2 * dx), y + (2 * dy), dx, dy, player, true);
+    };
+
+    // Search in + sign direction
+    return doSearch(1, 0)
+      || doSearch(-1, 0)
+      || doSearch(0, -1)
+      || doSearch(0, 1)
+      || doSearch(1, 1)
+      || doSearch(1, -1)
+      || doSearch(-1, 1)
+      || doSearch(-1, -1);
+  }
+
+  bool handleIncomingMessages~() {
+    $dispatchUpdate = false;
+    while (true) {
+      $msg = bind.receiveIncomingMessage() ?: return dispatchUpdate;
+      if ($cl = msg.onClick) {
+        $player = bind.getLastIncomingMessageOwner() ?: return dispatchUpdate;
+        $x = cl.x;
+        $y = cl.y;
+
+        if (isLegalMove(x, y, player)) {
+          board.set(x, y, player);
+          dispatchUpdate = true;
+
+          .void(int, int) doSearch = (dx, dy) -> {
+            searchAndFlip(x + dx, y + dy, dx, dy, player, false);
+          };
+
+          // Search in + sign direction
+          doSearch(1, 0); // RIGHT
+          doSearch(-1, 0); // LEFT
+          doSearch(0, -1); // UP
+          doSearch(0, 1); // DOWN
+
+          // Search in X direction (diagonals)
+          doSearch(1, 1); // BOT-RIGHT
+          doSearch(1, -1); // TOP-RIGHT
+          doSearch(-1, 1); // BOT-LEFT
+          doSearch(-1, -1); // TOP-LEFT
+        }
+
+      }
+    }
+  }
+
+  void update~() {
+    if (handleIncomingMessages()) {
+      bind.postMessage(.newRefreshBoard(copy(board)));
+    }
+  }
+
+  bool searchAndFlip~(int x, int y, int dx, int dy, byte flipColor, bool dryRun) {
+    if ((x < 0) || (x >= 16) || (y < 0) || (y >= 16)) {
+      trace "Searched in $dx, $dy direction, found edge of board";
+      return false;
+    }
+    $curr = board.get(x, y);
+    if (curr == flipColor): return true;
+    if (curr == 0b): return false;
+
+    $recursive = searchAndFlip(x + dx, y + dy, dx, dy, flipColor, dryRun);
+    if (recursive) {
+      if (dryRun == false) {
+        board.set(x, y, flipColor);
+      }
+    }
+    return recursive;
+  }
+
+  static .void()? game(ServerBinding~ bind) {
+    trace "Server started";
+    Server~ gm = new(bind);
+    return () -> {
+      gm.update();
+    };
+  }
+}
