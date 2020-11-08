@@ -1,6 +1,5 @@
 const { Client } = require('./Client');
 
-const DATA_URL = 'https://mmothello-data.s3.eu-central-1.amazonaws.com/px8x8';
 
 const root = document.querySelector('#root');
 const status = document.querySelector('#status');
@@ -9,6 +8,31 @@ const timer = document.querySelector('#timer');
 
 function setStatus(stat) {
   status.innerText = `Status: ${stat}`;
+}
+
+async function updateLeaderboard() {
+  /** @type {HTMLDivElement} */
+  const leaderboard = document.querySelector('#leaderboard');
+
+  const res = await fetch('https://mmothello-data.s3.eu-central-1.amazonaws.com/leaderboard', { method: 'GET' })
+  if (res.status != 200 ) {
+    console.warn('Could not find leaderboard data', res.status);
+    leaderboard.innerHTML = 'Leaderboard data not available';
+  }
+
+  leaderboard.innerHTML = '';
+  leaderboard.innerHTML = 'Leaderboard (reset daily):';
+
+  const data = await res.json();
+  const { winners } = data;
+  [...Object.keys(winners)]
+    .sort((a, b) => winners[b] - winners[a])
+    .forEach((player, pos) => {
+
+      const node = document.createElement('div');
+      node.innerText = `${player}, ${winners[player]} win${winners[player] > 1 ? 's' : ''}${pos === 0 ? ' 👑': ''}`
+      leaderboard.appendChild(node);
+    });
 }
 
 const sessionLengthMs = 1000 * 60 * 5;
@@ -31,11 +55,11 @@ async function init() {
   let inactivityCounter = 0;
   let playerIdToColors = {};
 
-  setInterval(() => {
-    if (socket && socket.bufferedAmount > 0) {
-      console.log('Buffered:', socket.bufferedAmount);
-    }
-  }, 100);
+  // setInterval(() => {
+  //   if (socket && socket.bufferedAmount > 0) {
+  //     console.log('Buffered:', socket.bufferedAmount);
+  //   }
+  // }, 100);
 
   const playerColors = [
     'red','blue','green','black','cyan','magenta','pink','purple','orange'
@@ -68,6 +92,7 @@ async function init() {
       return mapped;
     };
     socket.onopen = function (event) {
+      updateLeaderboard().catch(console.warn);
       if (socket === localSocket) {
         setStatus('Connected');
         connected = true;
@@ -97,10 +122,8 @@ async function init() {
             };
             cell.onmouseenter = () => {
               const player = cell.getAttribute('data-player');
-              console.log('onMosueEneter on color:', player, playerIdToColors);
               if (player) {
                 const owner = Object.keys(playerIdToColors).find(pid => playerIdToColors[pid] == player);
-                console.log('matching entry:', owner);
                 if (owner) {
                   popup.style.display = 'flex';
                   popup.innerText = `Owned by ${owner}`
@@ -143,7 +166,6 @@ async function init() {
           setBoard: (x, y, color) => {
             const hit = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`);
             const local = getLocalId();
-            console.log('comparing', local, 'with', color);
             if (color === local) {
               // Block for 5 seconds
               const timeouter = document.querySelector('#timeouter');
@@ -192,16 +214,13 @@ async function init() {
       }
 
       if (parsed.type === 'kl') {
-        console.log('decoded incoming payload ENCODED:', parsed.payload);
         const decoded = new TextEncoder().encode(parsed.payload);
-        console.log('decoded incoming payload DECODED:', decoded);
         incomingMessages.push(decoded);
 
         if (client) {
           client.call();
         }
       } else if (parsed.type === 'meta') {
-        console.log('onMetaMessage:', parsed);
         const { playerColor, playerName } = parsed;
         if (playerColor !== undefined && playerName !== undefined) {
           playerIdToColors[playerName] = playerColor;
@@ -249,21 +268,6 @@ async function init() {
 
   transitionSession();
   transitionSessionTimer = setInterval(transitionSession, 1000);
-
-  /** @type {HTMLButtonElement} */
-  const pingButton = document.querySelector('#ping');
-  pingButton.onclick = () => {
-    if (connected) {
-      const salt = `${Math.random()}`;
-      console.log(new Date(), 'Sending', salt);
-      socket.send(JSON.stringify({
-        action: 'sendmessage',
-        target: 'server',
-        type: 'meta',
-        salt
-      }));
-    }
-  };
 }
 
 init()

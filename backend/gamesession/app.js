@@ -9,7 +9,7 @@ const ddb = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10', region: 
 
 const s3 = new AWS.S3({ region: process.env.AWS_REGION });
 
-const sessionLengthMs = 1000 * 60 * 5;
+const sessionLengthMs = 1000 * 60; // * 5;
 const minimumGameLength = 10 * 1000;
 exports.handler = async event => {
 
@@ -77,9 +77,9 @@ exports.handler = async event => {
   const pidToLastIncomsingKlMessageTime = {};
   const server = Server({
     postMessage: data => {
-      console.log('outbound payload PLAIN:', data);
+      // console.log('outbound payload PLAIN:', data);
       const payload = new TextDecoder().decode(data);
-      console.log('outbound payload ENCODED:', payload);
+      // console.log('outbound payload ENCODED:', payload);
       socket.send(JSON.stringify({
         action: 'sendmessage',
         target: 'client',
@@ -99,7 +99,7 @@ exports.handler = async event => {
     },
   });
   socket.on('open', function open() {
-    console.log('websocket connected!');
+    // console.log('websocket connected!');
     // TODO maybe send greeting to all clients
   });
 
@@ -183,17 +183,17 @@ exports.handler = async event => {
         }).promise()).Body
       );
     } catch (e) {
-
+      console.log('err while downloading leaderboard:', e);
     }
 
-    if (!currLeaderboard || !currLeaderboard.day !== today) {
+    if (!currLeaderboard || currLeaderboard.day !== today) {
       currLeaderboard = {
         day: today,
         winners: {}
       };
     }
     const winnerName = Object.keys(pidToColors).find(name => pidToColors[name] === lastKnownLeader);
-    if (winnerName) {
+    if (winnerName && winnerName.length < 20) {
       currLeaderboard.winners[winnerName] = (currLeaderboard.winners[winnerName] || 0) + 1;
       await s3.putObject({
         Bucket: process.env.BUCKET_NAME,
