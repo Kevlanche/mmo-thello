@@ -3,11 +3,13 @@
   ServerToClient,
   Board
 ]
+#include util/Counter
 
 binding ServerBinding {
   ClientToServer? receiveIncomingMessage();
   byte? getLastIncomingMessageOwner();
   void? postMessage(ServerToClient msg);
+  void? reportLeader(byte pid);
 }
 
 worker Server {
@@ -48,12 +50,30 @@ worker Server {
           doSearch(-1, -1); // TOP-LEFT
         }
       }
+      if (msg.requestFullUpdate??) {
+        dispatchUpdate = true;
+      }
     }
   }
 
   void update~() {
     if (handleIncomingMessages()) {
       bind.postMessage(.newRefreshBoard(copy(board)));
+
+      Counter<byte>~ score = new();
+      for ($x = 0; < 16) {
+        for ($y = 0; < 16) {
+          $pid = board.get(x, y);
+          if (pid != 0b) {
+            score.add(pid);
+          }
+        }
+      }
+      if ($winner = score.result.entries.getSorted((lhs, rhs): rhs.value - lhs.value).first) {
+        bind.reportLeader(winner.key);
+      }
+
+
     }
   }
 

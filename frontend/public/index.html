@@ -51,6 +51,22 @@
       #side {
         grid-area: STAT;
         display: grid;
+        grid-template-areas:
+          "BLOCKER STATS"
+        ;
+
+        grid-template-rows: 1fr;
+        grid-template-columns: 4rem 1fr;
+      }
+
+      #timeouter {
+        background: blue;
+        width: 100%;
+        height: 50%;
+      }
+
+      #timeouter:not(.instant) {
+        transition: all 3s;
       }
 
 
@@ -63,6 +79,23 @@
         grid-template-rows: repeat(16, 1fr);
         width: 32rem;
         height: 32rem;
+        position: relative;
+      }
+
+      .popup {
+        width: 50%;
+        height: 2rem;
+        position: absolute;
+        bottom: -2.25rem;
+        left: 25%;
+        right: 25%;
+        border: 1px solid black;
+        border-radius: 0.25rem;
+        background: #bbb;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
       }
 
       #palette {
@@ -172,7 +205,9 @@
       </div>
       <div id="side">
 
+        <div id="timeouter">
 
+        </div>
         <button id="ping">Ping</button>
       </div>
     </div>

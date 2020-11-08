@@ -655,23 +655,32 @@ function performJsEscape(src) {
 
  // === BOILERPLATE END
 
-  function m128(_i, _a0) {// 47.loclam$lambda<void, Entry<any, any>>$500~ (Entry<any, any> ent))
-   let _4 = m111(_a0,) /* Entry<any, any>.getKey */;
-   let _5 = m112(_a0,) /* Entry<any, any>.getValue */;
-   m102(_i,_4, _5) /* Map<any, any>~.put~ */;
+  function m128(_i, _a0) {// 57.bouncelam$500~ (Entry<any, any> ent))
+   let _4 = _a0;
+   m129(_i[1],_4) /* 47.loclam$lambda<void, Entry<any, any>>$500~ (Entry<any, any> ent) */;
+   return undefined;
   }
   function m1(_a0) {// mmothello.Client~.NewManual)
-   let _2 = m4() /* mmothello.Board~.NewManual */;
-   let _3 = m4() /* mmothello.Board~.NewManual */;
+   let _2 = m6() /* mmothello.Board~.NewManual */;
+   let _3 = m6() /* mmothello.Board~.NewManual */;
    let _1 = [_a0, _2, _3];
    return _1;
   }
-  function m129() {// List<Entry<any, any>>~.NewManual)
-   let _2 = m132((5)) /* array<Entry<any, any>>~.NewManual */;
+  function m129(_i, _a0) {// 47.loclam$lambda<void, Entry<any, any>>$500~ (Entry<any, any> ent))
+   let _4 = m112(_a0,) /* Entry<any, any>.getKey */;
+   let _5 = m113(_a0,) /* Entry<any, any>.getValue */;
+   m103(_i,_4, _5) /* Map<any, any>~.put~ */;
+  }
+  function m130() {// List<Entry<any, any>>~.NewManual)
+   let _2 = m133((5)) /* array<Entry<any, any>>~.NewManual */;
    let _0 = [_2, (0)];
    return _0;
   }
-  function m130(_i, _a0, _a1) {// array<Entry<any, any>>~.set~)
+  function m3() {// mmothello.ClientToServer.newRequestFullUpdate)
+   let _2 = m8((1), (1)) /* mmothello.ClientToServer.NewManual */;
+   return _2;
+  }
+  function m131(_i, _a0, _a1) {// array<Entry<any, any>>~.set~)
    let _6 = (_a0<(0));
    if (_6) {
     let _5 = null;
@@ -684,73 +693,67 @@ function performJsEscape(src) {
    }
    _i[1 + _a0] = _a1;
   }
-  function m131(_i) {// array<Entry<any, any>>~.getLength)
+  function m132(_i) {// array<Entry<any, any>>~.getLength)
    return _i[0];
   }
-  function m4() {// mmothello.Board~.NewManual)
-   let _3 = _capi((16)*(16));
-   let _4 = m6(_3) /* Buffer<byte>~.NewManual */;
-   let _0 = [_4];
-   return _0;
-  }
-  function m132(_a0) {// array<Entry<any, any>>~.NewManual)
+  function m133(_a0) {// array<Entry<any, any>>~.NewManual)
    let _1 = [_a0, ...Array(_a0).fill(null)];
    return _1;
   }
-  function m133(_i, _a0) {// array<Entry<any, any>>~.forEachi)
+  function m6() {// mmothello.Board~.NewManual)
+   let _3 = _capi((16)*(16));
+   let _4 = m10(_3) /* Buffer<byte>~.NewManual */;
+   let _0 = [_4];
+   return _0;
+  }
+  function m134(_i, _a0) {// array<Entry<any, any>>~.forEachi)
    let _3 = 0;
    let _4 = (_3<_i[0]);
    while (_4) {
     let _5 = _3;
-    let _6 = m118(_i,_5) /* array<Entry<any, any>>~.get */;
+    let _6 = m119(_i,_5) /* array<Entry<any, any>>~.get */;
     let _7 = _3;
-    m137(_a0,_6, _7) /* lamcall58 */;
+    m138(_a0,_6, _7) /* lamcall58 */;
     _3 = _capi(_3+(1));
     let _9 = (_3<_i[0]);
     _4 = _9;
    }
   }
-  function m6(_a0) {// Buffer<byte>~.NewManual)
-   let _1 = [_a0, ...Array(_a0).fill(0)];
-   return _1;
-  }
-  function m134(_i, _a0, _a1) {// 59.bouncelam$500~ (Entry<any, any>? val, int idx))
+  function m135(_i, _a0, _a1) {// 59.bouncelam$500~ (Entry<any, any>? val, int idx))
    let _6 = _a0;
    let _7 = _a1;
    let _8 = _i[2];
-   m135(_i[1],_6, _7, _8) /* 50.loclam$lambda<void, Entry<any, any>?, int>$500~ (Entry<any, any>? val, int idx, array<Entry<any, any>>~ next) */;
+   m136(_i[1],_6, _7, _8) /* 50.loclam$lambda<void, Entry<any, any>?, int>$500~ (Entry<any, any>? val, int idx, array<Entry<any, any>>~ next) */;
    return undefined;
   }
-  function m135(_i, _a0, _a1, _a2) {// 50.loclam$lambda<void, Entry<any, any>?, int>$500~ (Entry<any, any>? val, int idx, array<Entry<any, any>>~ next))
+  function m8(_a0, _a1) {// mmothello.ClientToServer.NewManual)
+   let _2 = [_a0, _a1];
+   return _2;
+  }
+  function m136(_i, _a0, _a1, _a2) {// 50.loclam$lambda<void, Entry<any, any>?, int>$500~ (Entry<any, any>? val, int idx, array<Entry<any, any>>~ next))
    let _6 = _a1;
    let _7 = _a0;
-   m130(_a2,_6, _7) /* array<Entry<any, any>>~.set~ */;
+   m131(_a2,_6, _7) /* array<Entry<any, any>>~.set~ */;
    return undefined;
   }
-  function m136(_i, _a0) {// List<Entry<any, any>>~.forEach)
+  function m137(_i, _a0) {// List<Entry<any, any>>~.forEach)
    let _4 = _a0;
-   m138(_i[0],_4) /* array<Entry<any, any>>~.forEachEx */;
+   m139(_i[0],_4) /* array<Entry<any, any>>~.forEachEx */;
   }
-  function m9() {// StringBuilder~.NewManual)
-   let _1 = m30() /* List<String>~.NewManual */;
-   let _0 = [_1];
-   return _0;
+  function m10(_a0) {// Buffer<byte>~.NewManual)
+   let _1 = [_a0, ...Array(_a0).fill(0)];
+   return _1;
   }
-  function m137(_i, _a0, _a1) {// lamcall58)
-   m134(_i,_a0, _a1) /* 59.bouncelam$500~ (Entry<any, any>? val, int idx) */;
+  function m138(_i, _a0, _a1) {// lamcall58)
+   m135(_i,_a0, _a1) /* 59.bouncelam$500~ (Entry<any, any>? val, int idx) */;
    return undefined;
   }
-  function m10(_i, _a0) {// StringBuilder~.add~)
-   let _3 = _a0;
-   m31(_i[0],_3) /* List<String>~.add~ */;
-   return undefined;
-  }
-  function m138(_i, _a0) {// array<Entry<any, any>>~.forEachEx)
+  function m139(_i, _a0) {// array<Entry<any, any>>~.forEachEx)
    let _3 = 0;
    let _4 = (_3<_i[0]);
    while (_4) {
     let _6 = _3;
-    let _8 = m118(_i,_6) /* array<Entry<any, any>>~.get */;
+    let _8 = m119(_i,_6) /* array<Entry<any, any>>~.get */;
     let _7 = _8 === null;
     let _5;
     if (_7) {
@@ -763,27 +766,37 @@ function performJsEscape(src) {
     }
     if (_7) {
      let _9 = _5;
-     m139(_a0,_9) /* lamcall56 */;
+     m140(_a0,_9) /* lamcall56 */;
     }
     _3 = _capi(_3+(1));
     let _11 = (_3<_i[0]);
     _4 = _11;
    }
   }
-  function m11(_i) {// mmothello.Client.Click.getX)
-   return _i[0];
-  }
-  function m139(_i, _a0) {// lamcall56)
-   m127(_i,_a0) /* 57.bouncelam$500~ (Entry<any, any> ent) */;
+  function m140(_i, _a0) {// lamcall56)
+   m128(_i,_a0) /* 57.bouncelam$500~ (Entry<any, any> ent) */;
    return undefined;
   }
-  function m12(_a0) {// int.Stringify)
+  function m14() {// StringBuilder~.NewManual)
+   let _1 = m34() /* List<String>~.NewManual */;
+   let _0 = [_1];
+   return _0;
+  }
+  function m15(_i, _a0) {// StringBuilder~.add~)
+   let _3 = _a0;
+   m35(_i[0],_3) /* List<String>~.add~ */;
+   return undefined;
+  }
+  function m16(_i) {// mmothello.Client.Click.getX)
+   return _i[0];
+  }
+  function m17(_a0) {// int.Stringify)
    let _3 = (_a0===(0));
    if (_3) {
     let _2 = [[1,48]];
     return _2;
    }
-   let _4 = m32() /* List<int>~.NewManual */;
+   let _4 = m36() /* List<int>~.NewManual */;
    let _5 = (_a0<(0));
    if (_5) {
     _a0 = _capi((0)-_a0);
@@ -798,43 +811,43 @@ function performJsEscape(src) {
     let _16 = _capi(_a0%(10));
     let _14 = _capi(_16+(48));
     let _18 = _14;
-    m33(_4,_18) /* List<int>~.add~ */;
+    m37(_4,_18) /* List<int>~.add~ */;
     _a0 = _capi(_a0/(10));
     let _20 = (_a0>(0));
     _12 = _20;
    }
    if (_5) {
-    m33(_4,(45)) /* List<int>~.add~ */;
+    m37(_4,(45)) /* List<int>~.add~ */;
    }
-   m34(_4,) /* List<int>~.reverse~ */;
-   let _22 = m36(_4) /* SerializationBuilder.makeBetterCopy */;
-   let _23 = m35(_22) /* List.toString */;
+   m38(_4,) /* List<int>~.reverse~ */;
+   let _22 = m40(_4) /* SerializationBuilder.makeBetterCopy */;
+   let _23 = m39(_22) /* List.toString */;
    return _23;
   }
-  function m13(_i) {// mmothello.Client.Click.getY)
+  function m18(_i) {// mmothello.Client.Click.getY)
    return _i[1];
   }
-  function m14(_i) {// StringBuilder~.getResult)
+  function m19(_i) {// StringBuilder~.getResult)
    let _5 = [(500), _i];
-   let _2 = m37(_i[0],(0), _5) /* List<String>~.fold */;
+   let _2 = m41(_i[0],(0), _5) /* List<String>~.fold */;
    let _7 = _2;
-   let _6 = m40(_7) /* String~.NewManual */;
-   let _8 = m41((0)) /* int~.NewManual */;
+   let _6 = m44(_7) /* String~.NewManual */;
+   let _8 = m45((0)) /* int~.NewManual */;
    let _11 = [(500), _i, _8, _6];
-   m42(_i[0],_11) /* List<String>~.forEach */;
-   let _12 = m45(_6) /* SerializationBuilder.makeBetterCopy */;
+   m46(_i[0],_11) /* List<String>~.forEach */;
+   let _12 = m49(_6) /* SerializationBuilder.makeBetterCopy */;
    return _12;
   }
-  function m17(_a0) {// mmothello.ClientToServer.newOnClick)
+  function m21(_a0) {// mmothello.ClientToServer.newOnClick)
    let _2 = _a0;
-   let _3 = m50((0), _2) /* mmothello.ClientToServer.NewManual */;
+   let _3 = m8((0), _2) /* mmothello.ClientToServer.NewManual */;
    return _3;
   }
-  function m18(_a0, _a1) {// mmothello.ClientToServer.OnClick.NewManual)
+  function m22(_a0, _a1) {// mmothello.ClientToServer.OnClick.NewManual)
    let _2 = [_a0, _a1];
    return _2;
   }
-  function m21(_a0) {// byte.Stringify)
+  function m25(_a0) {// byte.Stringify)
    let _3 = (_a0===(0));
    if (_3) {
     let _2 = [[1,48]];
@@ -851,26 +864,26 @@ function performJsEscape(src) {
    if (_10) {
     _a0 = _capb((0)-_a0);
    }
-   let _13 = m32() /* List<int>~.NewManual */;
+   let _13 = m36() /* List<int>~.NewManual */;
    let _15 = (_a0>(0));
    while (_15) {
     let _18 = _capb(_a0%(10));
     let _19 = _capi(_18);
     let _21 = _capi(_19+(48));
-    m33(_13,_21) /* List<int>~.add~ */;
+    m37(_13,_21) /* List<int>~.add~ */;
     _a0 = _capb(_a0/(10));
     let _23 = (_a0>(0));
     _15 = _23;
    }
    if (_10) {
-    m33(_13,(45)) /* List<int>~.add~ */;
+    m37(_13,(45)) /* List<int>~.add~ */;
    }
-   m34(_13,) /* List<int>~.reverse~ */;
-   let _25 = m36(_13) /* SerializationBuilder.makeBetterCopy */;
-   let _26 = m35(_25) /* List.toString */;
+   m38(_13,) /* List<int>~.reverse~ */;
+   let _25 = m40(_13) /* SerializationBuilder.makeBetterCopy */;
+   let _26 = m39(_25) /* List.toString */;
    return _26;
   }
-  function m22(_i) {// mmothello.ServerToClient.getRefreshBoard)
+  function m26(_i) {// mmothello.ServerToClient.getRefreshBoard)
    let _4 = (_i[0]===(0));
    if (_4) {
     return _i[1];
@@ -878,35 +891,35 @@ function performJsEscape(src) {
    let _5 = null;
    return _5;
   }
-  function m23(_i, _a0, _a1) {// mmothello.Board~.get)
+  function m27(_i, _a0, _a1) {// mmothello.Board~.get)
    let _5 = _capi(_a1*(16));
    let _6 = _capi(_a0+_5);
-   let _7 = m52(_i[0],_6) /* Buffer<byte>~.get */;
+   let _7 = m54(_i[0],_6) /* Buffer<byte>~.get */;
    return _7;
   }
-  function m24(_i, _a0, _a1) {// mmothello.Board.get)
+  function m28(_i, _a0, _a1) {// mmothello.Board.get)
    let _5 = _capi(_a1*(16));
    let _6 = _capi(_a0+_5);
-   let _7 = m52(_i[0],_6) /* Buffer<byte>~.get */;
+   let _7 = m54(_i[0],_6) /* Buffer<byte>~.get */;
    return _7;
   }
-  function m26(_i, _a0, _a1, _a2) {// mmothello.Board~.set~)
+  function m30(_i, _a0, _a1, _a2) {// mmothello.Board~.set~)
    let _6 = _capi(_a1*(16));
    let _7 = _capi(_a0+_6);
    let _8 = _a2;
-   m53(_i[0],_7, _8) /* Buffer<byte>~.set~ */;
+   m55(_i[0],_7, _8) /* Buffer<byte>~.set~ */;
    return undefined;
   }
-  function m27(_i, _a0, _a1, _a2) {// mmothello.Board~.isLegalMove~)
+  function m31(_i, _a0, _a1, _a2) {// mmothello.Board~.isLegalMove~)
    let _5 = _a0;
    let _6 = _a1;
-   let _7 = m23(_i,_5, _6) /* mmothello.Board~.get */;
+   let _7 = m27(_i,_5, _6) /* mmothello.Board~.get */;
    let _9 = (_7===_a2);
    if (_9) {
     return (false);
    }
    let _10 = _a2;
-   let _11 = m54(_i,_10) /* mmothello.Board~.hasAnyPieces */;
+   let _11 = m56(_i,_10) /* mmothello.Board~.hasAnyPieces */;
    let _23 = (_11===(false));
    if (_23) {
     let _14 = (_a0>=(4));
@@ -937,55 +950,55 @@ function performJsEscape(src) {
    }
    let _24 = _a0;
    let _25 = _a1;
-   let _26 = m23(_i,_24, _25) /* mmothello.Board~.get */;
+   let _26 = m27(_i,_24, _25) /* mmothello.Board~.get */;
    let _29 = (_26!==(0));
    if (_29) {
     return (false);
    }
    let _30 = [(500), _i, _a0, _a1, _a2];
-   let _34 = m57(_30,(1), (0)) /* lamcall41 */;
+   let _34 = m59(_30,(1), (0)) /* lamcall41 */;
    let _35;
    if (_34) {
     _35 = true;
    }
    else {
-    let _38 = m57(_30,(-1), (0)) /* lamcall41 */;
+    let _38 = m59(_30,(-1), (0)) /* lamcall41 */;
     let _39;
     if (_38) {
      _39 = true;
     }
     else {
-     let _42 = m57(_30,(0), (-1)) /* lamcall41 */;
+     let _42 = m59(_30,(0), (-1)) /* lamcall41 */;
      let _43;
      if (_42) {
       _43 = true;
      }
      else {
-      let _46 = m57(_30,(0), (1)) /* lamcall41 */;
+      let _46 = m59(_30,(0), (1)) /* lamcall41 */;
       let _47;
       if (_46) {
        _47 = true;
       }
       else {
-       let _50 = m57(_30,(1), (1)) /* lamcall41 */;
+       let _50 = m59(_30,(1), (1)) /* lamcall41 */;
        let _51;
        if (_50) {
         _51 = true;
        }
        else {
-        let _54 = m57(_30,(1), (-1)) /* lamcall41 */;
+        let _54 = m59(_30,(1), (-1)) /* lamcall41 */;
         let _55;
         if (_54) {
          _55 = true;
         }
         else {
-         let _58 = m57(_30,(-1), (1)) /* lamcall41 */;
+         let _58 = m59(_30,(-1), (1)) /* lamcall41 */;
          let _59;
          if (_58) {
           _59 = true;
          }
          else {
-          _59 = m57(_30,(-1), (-1)) /* lamcall41 */;
+          _59 = m59(_30,(-1), (-1)) /* lamcall41 */;
          }
          _55 = _59;
         }
@@ -1001,49 +1014,49 @@ function performJsEscape(src) {
    }
    return _35;
   }
-  function m30() {// List<String>~.NewManual)
-   let _2 = m58((5)) /* array<String>~.NewManual */;
+  function m34() {// List<String>~.NewManual)
+   let _2 = m60((5)) /* array<String>~.NewManual */;
    let _0 = [_2, (0)];
    return _0;
   }
-  function m31(_i, _a0) {// List<String>~.add~)
-   let _4 = m59(_i[0],) /* array<String>~.getLength */;
+  function m35(_i, _a0) {// List<String>~.add~)
+   let _4 = m61(_i[0],) /* array<String>~.getLength */;
    let _11 = (_i[1]===_4);
    if (_11) {
-    let _6 = m59(_i[0],) /* array<String>~.getLength */;
+    let _6 = m61(_i[0],) /* array<String>~.getLength */;
     let _8 = _capi(_6*(2));
-    let _5 = m58(_8) /* array<String>~.NewManual */;
+    let _5 = m60(_8) /* array<String>~.NewManual */;
     let _10 = [(500), _i, _5];
-    m60(_i[0],_10) /* array<String>~.forEachi */;
+    m62(_i[0],_10) /* array<String>~.forEachi */;
     _i[0] = _5;
    }
    let _12 = _i[1];
    let _13 = _a0;
-   m63(_i[0],_12, _13) /* array<String>~.set~ */;
+   m65(_i[0],_12, _13) /* array<String>~.set~ */;
    _i[1] = _capi(_i[1]+(1));
   }
-  function m32() {// List<int>~.NewManual)
-   let _2 = m64((5)) /* array<int>~.NewManual */;
+  function m36() {// List<int>~.NewManual)
+   let _2 = m66((5)) /* array<int>~.NewManual */;
    let _0 = [_2, (0)];
    return _0;
   }
-  function m33(_i, _a0) {// List<int>~.add~)
-   let _4 = m65(_i[0],) /* array<int>~.getLength */;
+  function m37(_i, _a0) {// List<int>~.add~)
+   let _4 = m67(_i[0],) /* array<int>~.getLength */;
    let _11 = (_i[1]===_4);
    if (_11) {
-    let _6 = m65(_i[0],) /* array<int>~.getLength */;
+    let _6 = m67(_i[0],) /* array<int>~.getLength */;
     let _8 = _capi(_6*(2));
-    let _5 = m64(_8) /* array<int>~.NewManual */;
+    let _5 = m66(_8) /* array<int>~.NewManual */;
     let _10 = [(500), _i, _5];
-    m66(_i[0],_10) /* array<int>~.forEachi */;
+    m68(_i[0],_10) /* array<int>~.forEachi */;
     _i[0] = _5;
    }
    let _12 = _i[1];
    let _13 = _a0;
-   m69(_i[0],_12, _13) /* array<int>~.set~ */;
+   m71(_i[0],_12, _13) /* array<int>~.set~ */;
    _i[1] = _capi(_i[1]+(1));
   }
-  function m34(_i) {// List<int>~.reverse~)
+  function m38(_i) {// List<int>~.reverse~)
    let _3 = _capi(_i[1]/(2));
    let _5 = 0;
    let _6 = (_5<_3);
@@ -1051,22 +1064,22 @@ function performJsEscape(src) {
     let _7 = _5;
     let _9 = _capi(_i[1]-(1));
     let _10 = _capi(_9-_5);
-    m70(_i[0],_7, _10) /* array<int>~.swap~ */;
+    m72(_i[0],_7, _10) /* array<int>~.swap~ */;
     _5 = _capi(_5+(1));
     let _12 = (_5<_3);
     _6 = _12;
    }
   }
-  function m35(_a0) {// List.toString)
-   let _1 = m71(_a0,) /* List<int>.getSize */;
+  function m39(_a0) {// List.toString)
+   let _1 = m73(_a0,) /* List<int>.getSize */;
    let _3 = _1;
-   let _2 = m40(_3) /* String~.NewManual */;
+   let _2 = m44(_3) /* String~.NewManual */;
    let _4 = 0;
    let _5 = (_4<_1);
    while (_5) {
     let _6 = _4;
     let _7 = _4;
-    let _8 = m73(_a0,_7) /* List<int>.get */;
+    let _8 = m75(_a0,_7) /* List<int>.get */;
     let _10 = _8 === null;
     let _9;
     if (_10) {
@@ -1076,105 +1089,101 @@ function performJsEscape(src) {
      _9 = _8;
     }
     let _11 = _9;
-    m72(_2,_6, _11) /* String~.setChar~ */;
+    m74(_2,_6, _11) /* String~.setChar~ */;
     _4 = _capi(_4+(1));
     let _13 = (_4<_1);
     _5 = _13;
    }
-   let _14 = m45(_2) /* SerializationBuilder.makeBetterCopy */;
+   let _14 = m49(_2) /* SerializationBuilder.makeBetterCopy */;
    return _14;
   }
-  function m36(_a0) {// SerializationBuilder.makeBetterCopy)
-   let _1 = m74() /* Map<any, any>~.NewManual */;
-   let _2 = m75(_1,_a0) /* Map<any, any>~.get */;
+  function m40(_a0) {// SerializationBuilder.makeBetterCopy)
+   let _1 = m76() /* Map<any, any>~.NewManual */;
+   let _2 = m77(_1,_a0) /* Map<any, any>~.get */;
    let _3 = _2 === null;
    let _4;
    if (_3) {
-    _4 = m76(_a0,_1) /* List<int>~.MakeCopy */;
+    _4 = m78(_a0,_1) /* List<int>~.MakeCopy */;
    }
    else {
     _4 = _2;
    }
    return _4;
   }
-  function m37(_i, _a0, _a1) {// List<String>~.fold)
+  function m41(_i, _a0, _a1) {// List<String>~.fold)
    let _5 = _a0;
    let _6 = _a1;
-   let _7 = m77(_i[0],_5, _6) /* array<String>~.foldEx */;
+   let _7 = m79(_i[0],_5, _6) /* array<String>~.foldEx */;
    return _7;
   }
-  function m38(_i, _a0, _a1) {// 36.bouncelam$500 (int sum, String add))
+  function m42(_i, _a0, _a1) {// 36.bouncelam$500 (int sum, String add))
    let _5 = _a0;
    let _6 = _a1;
-   let _7 = m39(_i[1],_5, _6) /* 17.loclam$lambda<int, int, String>$500 (int sum, String add) */;
+   let _7 = m43(_i[1],_5, _6) /* 19.loclam$lambda<int, int, String>$500 (int sum, String add) */;
    return _7;
   }
-  function m39(_i, _a0, _a1) {// 17.loclam$lambda<int, int, String>$500 (int sum, String add))
-   let _4 = m78(_a1,) /* String.getLen */;
+  function m43(_i, _a0, _a1) {// 19.loclam$lambda<int, int, String>$500 (int sum, String add))
+   let _4 = m80(_a1,) /* String.getLen */;
    let _5 = _capi(_a0+_4);
    return _5;
   }
-  function m40(_a0) {// String~.NewManual)
+  function m44(_a0) {// String~.NewManual)
    let _2 = _a0;
-   let _3 = m79(_2) /* Buffer<int>~.NewManual */;
+   let _3 = m81(_2) /* Buffer<int>~.NewManual */;
    let _1 = [_3];
    return _1;
   }
-  function m41(_a0) {// int~.NewManual)
+  function m45(_a0) {// int~.NewManual)
    let _1 = [_a0];
    return _1;
   }
-  function m42(_i, _a0) {// List<String>~.forEach)
+  function m46(_i, _a0) {// List<String>~.forEach)
    let _4 = _a0;
-   m80(_i[0],_4) /* array<String>~.forEachEx */;
+   m82(_i[0],_4) /* array<String>~.forEachEx */;
   }
-  function m43(_i, _a0) {// 40.bouncelam$500 (String part))
+  function m47(_i, _a0) {// 40.bouncelam$500 (String part))
    let _6 = _a0;
    let _7 = _i[2];
    let _8 = _i[3];
-   m44(_i[1],_6, _7, _8) /* 17.loclam$lambda<void, String>$500 (String part, int~ off, String~ ret) */;
+   m48(_i[1],_6, _7, _8) /* 19.loclam$lambda<void, String>$500 (String part, int~ off, String~ ret) */;
    return undefined;
   }
-  function m44(_i, _a0, _a1, _a2) {// 17.loclam$lambda<void, String>$500 (String part, int~ off, String~ ret))
+  function m48(_i, _a0, _a1, _a2) {// 19.loclam$lambda<void, String>$500 (String part, int~ off, String~ ret))
    let _5 = _a2;
-   let _6 = m78(_a0,) /* String.getLen */;
-   let _7 = m82(_a1,_6) /* int~.getAndAdd~ */;
-   m81(_a0,_5, _7) /* String.writeTo */;
+   let _6 = m80(_a0,) /* String.getLen */;
+   let _7 = m84(_a1,_6) /* int~.getAndAdd~ */;
+   m83(_a0,_5, _7) /* String.writeTo */;
   }
-  function m45(_a0) {// SerializationBuilder.makeBetterCopy)
-   let _1 = m74() /* Map<any, any>~.NewManual */;
-   let _2 = m75(_1,_a0) /* Map<any, any>~.get */;
+  function m49(_a0) {// SerializationBuilder.makeBetterCopy)
+   let _1 = m76() /* Map<any, any>~.NewManual */;
+   let _2 = m77(_1,_a0) /* Map<any, any>~.get */;
    let _3 = _2 === null;
    let _4;
    if (_3) {
-    _4 = m83(_a0,_1) /* String~.MakeCopy */;
+    _4 = m85(_a0,_1) /* String~.MakeCopy */;
    }
    else {
     _4 = _2;
    }
    return _4;
   }
-  function m46(_i) {// Buffer<int>~.getLen)
+  function m50(_i) {// Buffer<int>~.getLen)
    return _i[0];
   }
-  function m48(_i, _a0) {// String.getChar)
+  function m52(_i, _a0) {// String.getChar)
    let _3 = _a0;
-   let _4 = m85(_i[0],_3) /* Buffer<int>~.get */;
+   let _4 = m87(_i[0],_3) /* Buffer<int>~.get */;
    return _4;
   }
-  function m50(_a0, _a1) {// mmothello.ClientToServer.NewManual)
-   let _2 = [_a0, _a1];
-   return _2;
-  }
-  function m52(_i, _a0) {// Buffer<byte>~.get)
+  function m54(_i, _a0) {// Buffer<byte>~.get)
    let _3 = _i[1 + _a0] || 0;
    return _3;
   }
-  function m53(_i, _a0, _a1) {// Buffer<byte>~.set~)
+  function m55(_i, _a0, _a1) {// Buffer<byte>~.set~)
    if (_a0 >= 0 && _a0 < _i.length - 1) _i[1 + _a0] = _a1;
    return undefined;
   }
-  function m54(_i, _a0) {// mmothello.Board~.hasAnyPieces)
+  function m56(_i, _a0) {// mmothello.Board~.hasAnyPieces)
    let _3 = 0;
    let _5 = (_3<(16));
    while (_5) {
@@ -1183,53 +1192,53 @@ function performJsEscape(src) {
     while (_8) {
      let _9 = _3;
      let _10 = _6;
-     let _11 = m23(_i,_9, _10) /* mmothello.Board~.get */;
+     let _11 = m27(_i,_9, _10) /* mmothello.Board~.get */;
      let _45 = (_11===_a0);
      if (_45) {
       let _12 = [(501), _i, _3, _6, _a0];
-      let _16 = m57(_12,(-1), (0)) /* lamcall41 */;
+      let _16 = m59(_12,(-1), (0)) /* lamcall41 */;
       let _17;
       if (_16) {
        _17 = true;
       }
       else {
-       let _20 = m57(_12,(1), (0)) /* lamcall41 */;
+       let _20 = m59(_12,(1), (0)) /* lamcall41 */;
        let _21;
        if (_20) {
         _21 = true;
        }
        else {
-        let _24 = m57(_12,(0), (-1)) /* lamcall41 */;
+        let _24 = m59(_12,(0), (-1)) /* lamcall41 */;
         let _25;
         if (_24) {
          _25 = true;
         }
         else {
-         let _28 = m57(_12,(0), (1)) /* lamcall41 */;
+         let _28 = m59(_12,(0), (1)) /* lamcall41 */;
          let _29;
          if (_28) {
           _29 = true;
          }
          else {
-          let _32 = m57(_12,(-1), (-1)) /* lamcall41 */;
+          let _32 = m59(_12,(-1), (-1)) /* lamcall41 */;
           let _33;
           if (_32) {
            _33 = true;
           }
           else {
-           let _36 = m57(_12,(1), (-1)) /* lamcall41 */;
+           let _36 = m59(_12,(1), (-1)) /* lamcall41 */;
            let _37;
            if (_36) {
             _37 = true;
            }
            else {
-            let _40 = m57(_12,(-1), (1)) /* lamcall41 */;
+            let _40 = m59(_12,(-1), (1)) /* lamcall41 */;
             let _41;
             if (_40) {
              _41 = true;
             }
             else {
-             _41 = m57(_12,(1), (1)) /* lamcall41 */;
+             _41 = m59(_12,(1), (1)) /* lamcall41 */;
             }
             _37 = _41;
            }
@@ -1257,19 +1266,19 @@ function performJsEscape(src) {
    }
    return (false);
   }
-  function m55(_i, _a0, _a1) {// 42.bouncelam$500~ (int dx, int dy))
+  function m57(_i, _a0, _a1) {// 42.bouncelam$500~ (int dx, int dy))
    let _8 = _a0;
    let _9 = _a1;
    let _10 = _i[2];
    let _11 = _i[3];
    let _12 = _i[4];
-   let _13 = m56(_i[1],_8, _9, _10, _11, _12) /* 12.loclam$lambda<bool, int, int>$500~ (int dx, int dy, int x, int y, byte player) */;
+   let _13 = m58(_i[1],_8, _9, _10, _11, _12) /* 12.loclam$lambda<bool, int, int>$500~ (int dx, int dy, int x, int y, byte player) */;
    return _13;
   }
-  function m56(_i, _a0, _a1, _a2, _a3, _a4) {// 12.loclam$lambda<bool, int, int>$500~ (int dx, int dy, int x, int y, byte player))
+  function m58(_i, _a0, _a1, _a2, _a3, _a4) {// 12.loclam$lambda<bool, int, int>$500~ (int dx, int dy, int x, int y, byte player))
    let _7 = _capi(_a2+_a0);
    let _8 = _capi(_a3+_a1);
-   let _9 = m23(_i,_7, _8) /* mmothello.Board~.get */;
+   let _9 = m27(_i,_7, _8) /* mmothello.Board~.get */;
    let _11 = (_9===(0));
    let _12;
    if (_11) {
@@ -1288,54 +1297,54 @@ function performJsEscape(src) {
    let _20 = _a0;
    let _21 = _a1;
    let _22 = _a4;
-   let _24 = m91(_i,_16, _19, _20, _21, _22, (true)) /* mmothello.Board~.searchAndFlip~ */;
+   let _24 = m92(_i,_16, _19, _20, _21, _22, (true)) /* mmothello.Board~.searchAndFlip~ */;
    return _24;
   }
-  function m57(_i, _a0, _a1) {// lamcall41)
+  function m59(_i, _a0, _a1) {// lamcall41)
    let _5 = _i[0];
    let _7 = (_5===(500));
    let _4;
    if (_7) {
-    _4 = m55(_i,_a0, _a1) /* 42.bouncelam$500~ (int dx, int dy) */;
+    _4 = m57(_i,_a0, _a1) /* 42.bouncelam$500~ (int dx, int dy) */;
     return _4;
    }
-   _4 = m89(_i,_a0, _a1) /* 53.bouncelam$501 (int dx, int dy) */;
+   _4 = m90(_i,_a0, _a1) /* 53.bouncelam$501 (int dx, int dy) */;
    return _4;
   }
-  function m58(_a0) {// array<String>~.NewManual)
+  function m60(_a0) {// array<String>~.NewManual)
    let _1 = [_a0, ...Array(_a0).fill(null)];
    return _1;
   }
-  function m59(_i) {// array<String>~.getLength)
+  function m61(_i) {// array<String>~.getLength)
    return _i[0];
   }
-  function m60(_i, _a0) {// array<String>~.forEachi)
+  function m62(_i, _a0) {// array<String>~.forEachi)
    let _3 = 0;
    let _4 = (_3<_i[0]);
    while (_4) {
     let _5 = _3;
-    let _6 = m93(_i,_5) /* array<String>~.get */;
+    let _6 = m94(_i,_5) /* array<String>~.get */;
     let _7 = _3;
-    m92(_a0,_6, _7) /* lamcall43 */;
+    m93(_a0,_6, _7) /* lamcall43 */;
     _3 = _capi(_3+(1));
     let _9 = (_3<_i[0]);
     _4 = _9;
    }
   }
-  function m61(_i, _a0, _a1) {// 44.bouncelam$500~ (String? val, int idx))
+  function m63(_i, _a0, _a1) {// 44.bouncelam$500~ (String? val, int idx))
    let _6 = _a0;
    let _7 = _a1;
    let _8 = _i[2];
-   m62(_i[1],_6, _7, _8) /* 18.loclam$lambda<void, String?, int>$500~ (String? val, int idx, array<String>~ next) */;
+   m64(_i[1],_6, _7, _8) /* 20.loclam$lambda<void, String?, int>$500~ (String? val, int idx, array<String>~ next) */;
    return undefined;
   }
-  function m62(_i, _a0, _a1, _a2) {// 18.loclam$lambda<void, String?, int>$500~ (String? val, int idx, array<String>~ next))
+  function m64(_i, _a0, _a1, _a2) {// 20.loclam$lambda<void, String?, int>$500~ (String? val, int idx, array<String>~ next))
    let _6 = _a1;
    let _7 = _a0;
-   m63(_a2,_6, _7) /* array<String>~.set~ */;
+   m65(_a2,_6, _7) /* array<String>~.set~ */;
    return undefined;
   }
-  function m63(_i, _a0, _a1) {// array<String>~.set~)
+  function m65(_i, _a0, _a1) {// array<String>~.set~)
    let _6 = (_a0<(0));
    if (_6) {
     let _5 = null;
@@ -1348,40 +1357,40 @@ function performJsEscape(src) {
    }
    _i[1 + _a0] = _a1;
   }
-  function m64(_a0) {// array<int>~.NewManual)
+  function m66(_a0) {// array<int>~.NewManual)
    let _1 = [_a0, ...Array(_a0).fill(null)];
    return _1;
   }
-  function m65(_i) {// array<int>~.getLength)
+  function m67(_i) {// array<int>~.getLength)
    return _i[0];
   }
-  function m66(_i, _a0) {// array<int>~.forEachi)
+  function m68(_i, _a0) {// array<int>~.forEachi)
    let _3 = 0;
    let _4 = (_3<_i[0]);
    while (_4) {
     let _5 = _3;
-    let _6 = m95(_i,_5) /* array<int>~.get */;
+    let _6 = m96(_i,_5) /* array<int>~.get */;
     let _7 = _3;
-    m94(_a0,_6, _7) /* lamcall45 */;
+    m95(_a0,_6, _7) /* lamcall45 */;
     _3 = _capi(_3+(1));
     let _9 = (_3<_i[0]);
     _4 = _9;
    }
   }
-  function m67(_i, _a0, _a1) {// 46.bouncelam$500~ (int? val, int idx))
+  function m69(_i, _a0, _a1) {// 46.bouncelam$500~ (int? val, int idx))
    let _6 = _a0;
    let _7 = _a1;
    let _8 = _i[2];
-   m68(_i[1],_6, _7, _8) /* 24.loclam$lambda<void, int?, int>$500~ (int? val, int idx, array<int>~ next) */;
+   m70(_i[1],_6, _7, _8) /* 24.loclam$lambda<void, int?, int>$500~ (int? val, int idx, array<int>~ next) */;
    return undefined;
   }
-  function m68(_i, _a0, _a1, _a2) {// 24.loclam$lambda<void, int?, int>$500~ (int? val, int idx, array<int>~ next))
+  function m70(_i, _a0, _a1, _a2) {// 24.loclam$lambda<void, int?, int>$500~ (int? val, int idx, array<int>~ next))
    let _6 = _a1;
    let _7 = _a0;
-   m69(_a2,_6, _7) /* array<int>~.set~ */;
+   m71(_a2,_6, _7) /* array<int>~.set~ */;
    return undefined;
   }
-  function m69(_i, _a0, _a1) {// array<int>~.set~)
+  function m71(_i, _a0, _a1) {// array<int>~.set~)
    let _6 = (_a0<(0));
    if (_6) {
     let _5 = null;
@@ -1394,43 +1403,43 @@ function performJsEscape(src) {
    }
    _i[1 + _a0] = _a1;
   }
-  function m70(_i, _a0, _a1) {// array<int>~.swap~)
+  function m72(_i, _a0, _a1) {// array<int>~.swap~)
    let _5 = _a0;
-   let _4 = m95(_i,_5) /* array<int>~.get */;
+   let _4 = m96(_i,_5) /* array<int>~.get */;
    let _6 = _a0;
    let _7 = _a1;
-   let _8 = m95(_i,_7) /* array<int>~.get */;
-   m69(_i,_6, _8) /* array<int>~.set~ */;
+   let _8 = m96(_i,_7) /* array<int>~.get */;
+   m71(_i,_6, _8) /* array<int>~.set~ */;
    let _9 = _a1;
    let _10 = _4;
-   m69(_i,_9, _10) /* array<int>~.set~ */;
+   m71(_i,_9, _10) /* array<int>~.set~ */;
   }
-  function m71(_i) {// List<int>.getSize)
+  function m73(_i) {// List<int>.getSize)
    return _i[1];
   }
-  function m72(_i, _a0, _a1) {// String~.setChar~)
+  function m74(_i, _a0, _a1) {// String~.setChar~)
    let _4 = _a0;
    let _5 = _a1;
-   m96(_i[0],_4, _5) /* Buffer<int>~.set~ */;
+   m97(_i[0],_4, _5) /* Buffer<int>~.set~ */;
   }
-  function m73(_i, _a0) {// List<int>.get)
+  function m75(_i, _a0) {// List<int>.get)
    let _4 = _a0;
-   let _5 = m95(_i[0],_4) /* array<int>~.get */;
+   let _5 = m96(_i[0],_4) /* array<int>~.get */;
    return _5;
   }
-  function m74() {// Map<any, any>~.NewManual)
-   let _2 = m97((16)) /* array<Entries<any, any>~>~.NewManual */;
+  function m76() {// Map<any, any>~.NewManual)
+   let _2 = m98((16)) /* array<Entries<any, any>~>~.NewManual */;
    let _0 = [_2, (0)];
    return _0;
   }
-  function m75(_i, _a0) {// Map<any, any>~.get)
+  function m77(_i, _a0) {// Map<any, any>~.get)
    let _5 = _identityHash(_a0);
    let _6 = _5;
-   let _4 = m98(_6) /* int.sabs */;
-   let _8 = m99(_i[0],) /* array<Entries<any, any>~>~.getLength */;
+   let _4 = m99(_6) /* int.sabs */;
+   let _8 = m100(_i[0],) /* array<Entries<any, any>~>~.getLength */;
    let _7 = _capi(_4%_8);
    let _10 = _7;
-   let _11 = m100(_i[0],_10) /* array<Entries<any, any>~>~.get */;
+   let _11 = m101(_i[0],_10) /* array<Entries<any, any>~>~.get */;
    let _13 = _11 === null;
    let _12;
    if (_13) {
@@ -1441,18 +1450,18 @@ function performJsEscape(src) {
    }
    let _9 = _12;
    let _14 = _a0;
-   let _15 = m101(_9,_14) /* Entries<any, any>~.get */;
+   let _15 = m102(_9,_14) /* Entries<any, any>~.get */;
    return _15;
   }
-  function m76(_i, _a0) {// List<int>~.MakeCopy)
+  function m78(_i, _a0) {// List<int>~.MakeCopy)
    let _5 = [];
-   m102(_a0,_i, _5) /* Map<any, any>~.put~ */;
+   m103(_a0,_i, _5) /* Map<any, any>~.put~ */;
    let _4 = _5;
-   let _7 = m75(_a0,_i[0]) /* Map<any, any>~.get */;
+   let _7 = m77(_a0,_i[0]) /* Map<any, any>~.get */;
    let _8 = _7 === null;
    let _9;
    if (_8) {
-    _9 = m103(_i[0],_a0) /* array<int>~.MakeCopyM */;
+    _9 = m104(_i[0],_a0) /* array<int>~.MakeCopyM */;
    }
    else {
     _9 = _7;
@@ -1463,13 +1472,13 @@ function performJsEscape(src) {
    _4[1] = _10;
    return _4;
   }
-  function m77(_i, _a0, _a1) {// array<String>~.foldEx)
+  function m79(_i, _a0, _a1) {// array<String>~.foldEx)
    let _4 = _a0;
    let _5 = 0;
    let _6 = (_5<_i[0]);
    while (_6) {
     let _7 = _5;
-    let _10 = m93(_i,_7) /* array<String>~.get */;
+    let _10 = m94(_i,_7) /* array<String>~.get */;
     let _9 = _10 === null;
     let _8;
     if (_9) {
@@ -1483,7 +1492,7 @@ function performJsEscape(src) {
     if (_9) {
      let _11 = _4;
      let _12 = _8;
-     _4 = m104(_a1,_11, _12) /* lamcall35 */;
+     _4 = m105(_a1,_11, _12) /* lamcall35 */;
     }
     _5 = _capi(_5+(1));
     let _14 = (_5<_i[0]);
@@ -1491,20 +1500,20 @@ function performJsEscape(src) {
    }
    return _4;
   }
-  function m78(_i) {// String.getLen)
-   let _2 = m46(_i[0],) /* Buffer<int>~.getLen */;
+  function m80(_i) {// String.getLen)
+   let _2 = m50(_i[0],) /* Buffer<int>~.getLen */;
    return _2;
   }
-  function m79(_a0) {// Buffer<int>~.NewManual)
+  function m81(_a0) {// Buffer<int>~.NewManual)
    let _1 = [_a0, ...Array(_a0).fill(0)];
    return _1;
   }
-  function m80(_i, _a0) {// array<String>~.forEachEx)
+  function m82(_i, _a0) {// array<String>~.forEachEx)
    let _3 = 0;
    let _4 = (_3<_i[0]);
    while (_4) {
     let _6 = _3;
-    let _8 = m93(_i,_6) /* array<String>~.get */;
+    let _8 = m94(_i,_6) /* array<String>~.get */;
     let _7 = _8 === null;
     let _5;
     if (_7) {
@@ -1517,41 +1526,41 @@ function performJsEscape(src) {
     }
     if (_7) {
      let _9 = _5;
-     m105(_a0,_9) /* lamcall39 */;
+     m106(_a0,_9) /* lamcall39 */;
     }
     _3 = _capi(_3+(1));
     let _11 = (_3<_i[0]);
     _4 = _11;
    }
   }
-  function m81(_i, _a0, _a1) {// String.writeTo)
-   let _4 = m46(_i[0],) /* Buffer<int>~.getLen */;
+  function m83(_i, _a0, _a1) {// String.writeTo)
+   let _4 = m50(_i[0],) /* Buffer<int>~.getLen */;
    let _5 = 0;
    let _6 = (_5<_4);
    while (_6) {
     let _7 = _capi(_5+_a1);
     let _8 = _5;
-    let _9 = m85(_i[0],_8) /* Buffer<int>~.get */;
-    m72(_a0,_7, _9) /* String~.setChar~ */;
+    let _9 = m87(_i[0],_8) /* Buffer<int>~.get */;
+    m74(_a0,_7, _9) /* String~.setChar~ */;
     _5 = _capi(_5+(1));
     let _11 = (_5<_4);
     _6 = _11;
    }
   }
-  function m82(_i, _a0) {// int~.getAndAdd~)
+  function m84(_i, _a0) {// int~.getAndAdd~)
    let _3 = _i[0];
    _i[0] = _capi(_i[0]+_a0);
    return _3;
   }
-  function m83(_i, _a0) {// String~.MakeCopy)
+  function m85(_i, _a0) {// String~.MakeCopy)
    let _4 = [];
-   m102(_a0,_i, _4) /* Map<any, any>~.put~ */;
+   m103(_a0,_i, _4) /* Map<any, any>~.put~ */;
    let _3 = _4;
-   let _6 = m75(_a0,_i[0]) /* Map<any, any>~.get */;
+   let _6 = m77(_a0,_i[0]) /* Map<any, any>~.get */;
    let _7 = _6 === null;
    let _8;
    if (_7) {
-    _8 = m106(_i[0],_a0) /* Buffer<int>~.MakeCopyM */;
+    _8 = m107(_i[0],_a0) /* Buffer<int>~.MakeCopyM */;
    }
    else {
     _8 = _6;
@@ -1560,32 +1569,32 @@ function performJsEscape(src) {
    _3[0] = _5;
    return _3;
   }
-  function m84(_a0, _a1) {// int.shiftRight)
+  function m86(_a0, _a1) {// int.shiftRight)
    let _2 = _capi(_a0>>_a1);
    return _2;
   }
-  function m85(_i, _a0) {// Buffer<int>~.get)
+  function m87(_i, _a0) {// Buffer<int>~.get)
    let _3 = _i[1 + _a0] || 0;
    return _3;
   }
-  function m88(_a0) {// mmothello.ServerToClient.newRefreshBoard)
+  function m89(_a0) {// mmothello.ServerToClient.newRefreshBoard)
    let _2 = _a0;
-   let _3 = m108((0), _2) /* mmothello.ServerToClient.NewManual */;
+   let _3 = m109((0), _2) /* mmothello.ServerToClient.NewManual */;
    return _3;
   }
-  function m89(_i, _a0, _a1) {// 53.bouncelam$501 (int dx, int dy))
+  function m90(_i, _a0, _a1) {// 53.bouncelam$501 (int dx, int dy))
    let _8 = _a0;
    let _9 = _a1;
    let _10 = _i[2];
    let _11 = _i[3];
    let _12 = _i[4];
-   let _13 = m90(_i[1],_8, _9, _10, _11, _12) /* 12.loclam$lambda<bool, int, int>$501 (int dx, int dy, int x, int y, byte player) */;
+   let _13 = m91(_i[1],_8, _9, _10, _11, _12) /* 12.loclam$lambda<bool, int, int>$501 (int dx, int dy, int x, int y, byte player) */;
    return _13;
   }
-  function m90(_i, _a0, _a1, _a2, _a3, _a4) {// 12.loclam$lambda<bool, int, int>$501 (int dx, int dy, int x, int y, byte player))
+  function m91(_i, _a0, _a1, _a2, _a3, _a4) {// 12.loclam$lambda<bool, int, int>$501 (int dx, int dy, int x, int y, byte player))
    let _7 = _capi(_a2+_a0);
    let _8 = _capi(_a3+_a1);
-   let _9 = m23(_i,_7, _8) /* mmothello.Board~.get */;
+   let _9 = m27(_i,_7, _8) /* mmothello.Board~.get */;
    let _10 = (_9!==_a4);
    let _11;
    if (_10) {
@@ -1596,7 +1605,7 @@ function performJsEscape(src) {
    }
    return _11;
   }
-  function m91(_i, _a0, _a1, _a2, _a3, _a4, _a5) {// mmothello.Board~.searchAndFlip~)
+  function m92(_i, _a0, _a1, _a2, _a3, _a4, _a5) {// mmothello.Board~.searchAndFlip~)
    let _9 = (_a0<(0));
    let _10;
    if (_9) {
@@ -1626,7 +1635,7 @@ function performJsEscape(src) {
    }
    let _19 = _a0;
    let _20 = _a1;
-   let _21 = m23(_i,_19, _20) /* mmothello.Board~.get */;
+   let _21 = m27(_i,_19, _20) /* mmothello.Board~.get */;
    let _23 = (_21===_a4);
    if (_23) {
     return (true);
@@ -1641,23 +1650,23 @@ function performJsEscape(src) {
    let _30 = _a3;
    let _31 = _a4;
    let _32 = _a5;
-   let _33 = m91(_i,_27, _28, _29, _30, _31, _32) /* mmothello.Board~.searchAndFlip~ */;
+   let _33 = m92(_i,_27, _28, _29, _30, _31, _32) /* mmothello.Board~.searchAndFlip~ */;
    if (_33) {
     let _38 = (_a5===(false));
     if (_38) {
      let _35 = _a0;
      let _36 = _a1;
      let _37 = _a4;
-     m26(_i,_35, _36, _37) /* mmothello.Board~.set~ */;
+     m30(_i,_35, _36, _37) /* mmothello.Board~.set~ */;
     }
    }
    return _33;
   }
-  function m92(_i, _a0, _a1) {// lamcall43)
-   m61(_i,_a0, _a1) /* 44.bouncelam$500~ (String? val, int idx) */;
+  function m93(_i, _a0, _a1) {// lamcall43)
+   m63(_i,_a0, _a1) /* 44.bouncelam$500~ (String? val, int idx) */;
    return undefined;
   }
-  function m93(_i, _a0) {// array<String>~.get)
+  function m94(_i, _a0) {// array<String>~.get)
    let _5 = (_a0<(0));
    if (_5) {
     let _4 = null;
@@ -1671,11 +1680,11 @@ function performJsEscape(src) {
    let _8 = _i[1 + _a0];
    return _8;
   }
-  function m94(_i, _a0, _a1) {// lamcall45)
-   m67(_i,_a0, _a1) /* 46.bouncelam$500~ (int? val, int idx) */;
+  function m95(_i, _a0, _a1) {// lamcall45)
+   m69(_i,_a0, _a1) /* 46.bouncelam$500~ (int? val, int idx) */;
    return undefined;
   }
-  function m95(_i, _a0) {// array<int>~.get)
+  function m96(_i, _a0) {// array<int>~.get)
    let _5 = (_a0<(0));
    if (_5) {
     let _4 = null;
@@ -1689,15 +1698,15 @@ function performJsEscape(src) {
    let _8 = _i[1 + _a0];
    return _8;
   }
-  function m96(_i, _a0, _a1) {// Buffer<int>~.set~)
+  function m97(_i, _a0, _a1) {// Buffer<int>~.set~)
    if (_a0 >= 0 && _a0 < _i.length - 1) _i[1 + _a0] = _a1;
    return undefined;
   }
-  function m97(_a0) {// array<Entries<any, any>~>~.NewManual)
+  function m98(_a0) {// array<Entries<any, any>~>~.NewManual)
    let _1 = [_a0, ...Array(_a0).fill(null)];
    return _1;
   }
-  function m98(_a0) {// int.sabs)
+  function m99(_a0) {// int.sabs)
    let _4 = (_a0<(0));
    if (_4) {
     let _3 = _capi((0)-_a0);
@@ -1705,10 +1714,10 @@ function performJsEscape(src) {
    }
    return _a0;
   }
-  function m99(_i) {// array<Entries<any, any>~>~.getLength)
+  function m100(_i) {// array<Entries<any, any>~>~.getLength)
    return _i[0];
   }
-  function m100(_i, _a0) {// array<Entries<any, any>~>~.get)
+  function m101(_i, _a0) {// array<Entries<any, any>~>~.get)
    let _5 = (_a0<(0));
    if (_5) {
     let _4 = null;
@@ -1722,13 +1731,13 @@ function performJsEscape(src) {
    let _8 = _i[1 + _a0];
    return _8;
   }
-  function m101(_i, _a0) {// Entries<any, any>~.get)
+  function m102(_i, _a0) {// Entries<any, any>~.get)
    let _3 = 0;
-   let _4 = m109(_i[0],) /* List<Entry<any, any>>~.getSize */;
+   let _4 = m110(_i[0],) /* List<Entry<any, any>>~.getSize */;
    let _5 = (_3<_4);
    while (_5) {
     let _7 = _3;
-    let _8 = m110(_i[0],_7) /* List<Entry<any, any>>~.get */;
+    let _8 = m111(_i[0],_7) /* List<Entry<any, any>>~.get */;
     let _10 = _8 === null;
     let _9;
     if (_10) {
@@ -1738,33 +1747,33 @@ function performJsEscape(src) {
      _9 = _8;
     }
     let _6 = _9;
-    let _11 = m111(_6,) /* Entry<any, any>.getKey */;
+    let _11 = m112(_6,) /* Entry<any, any>.getKey */;
     let _13 = (_11) === (_a0);
     if (_13) {
-     let _12 = m112(_6,) /* Entry<any, any>.getValue */;
+     let _12 = m113(_6,) /* Entry<any, any>.getValue */;
      return _12;
     }
     _3 = _capi(_3+(1));
-    let _15 = m109(_i[0],) /* List<Entry<any, any>>~.getSize */;
+    let _15 = m110(_i[0],) /* List<Entry<any, any>>~.getSize */;
     let _16 = (_3<_15);
     _5 = _16;
    }
    let _17 = null;
    return _17;
   }
-  function m102(_i, _a0, _a1) {// Map<any, any>~.put~)
+  function m103(_i, _a0, _a1) {// Map<any, any>~.put~)
    let _6 = _identityHash(_a0);
    let _7 = _6;
-   let _5 = m98(_7) /* int.sabs */;
-   let _9 = m99(_i[0],) /* array<Entries<any, any>~>~.getLength */;
+   let _5 = m99(_7) /* int.sabs */;
+   let _9 = m100(_i[0],) /* array<Entries<any, any>~>~.getLength */;
    let _8 = _capi(_5%_9);
    let _11 = _8;
-   let _12 = m100(_i[0],_11) /* array<Entries<any, any>~>~.get */;
+   let _12 = m101(_i[0],_11) /* array<Entries<any, any>~>~.get */;
    let _14 = _12 === null;
    let _13;
    if (_14) {
     let _15 = _8;
-    _13 = m113(_i,_15) /* Map<any, any>~.putNew~ */;
+    _13 = m114(_i,_15) /* Map<any, any>~.putNew~ */;
    }
    else {
     _13 = _12;
@@ -1772,13 +1781,13 @@ function performJsEscape(src) {
    let _10 = _13;
    let _17 = _a0;
    let _18 = _a1;
-   let _16 = m114(_10,_17, _18) /* Entries<any, any>~.put~ */;
+   let _16 = m115(_10,_17, _18) /* Entries<any, any>~.put~ */;
    let _19 = _16 === null;
    _19 = (_19===(false));
    let _33 = (_19===(false));
    if (_33) {
     _i[1] = _capi(_i[1]+(1));
-    let _24 = m99(_i[0],) /* array<Entries<any, any>~>~.getLength */;
+    let _24 = m100(_i[0],) /* array<Entries<any, any>~>~.getLength */;
     let _23 = _capi(_24*(2));
     let _32 = (_i[1]>=_23);
     if (_32) {
@@ -1788,26 +1797,26 @@ function performJsEscape(src) {
      else {
       let _28 = _i[0];
       let _29 = _23;
-      _i[0] = m97(_29) /* array<Entries<any, any>~>~.NewManual */;
+      _i[0] = m98(_29) /* array<Entries<any, any>~>~.NewManual */;
       _i[1] = 0;
       let _31 = [(500), _i];
-      m115(_28,_31) /* array<Entries<any, any>~>~.forEachEx */;
+      m116(_28,_31) /* array<Entries<any, any>~>~.forEachEx */;
      }
     }
    }
    return _16;
   }
-  function m103(_i, _a0) {// array<int>~.MakeCopyM)
+  function m104(_i, _a0) {// array<int>~.MakeCopyM)
    let _4 = _i[0];
-   let _3 = m64(_4) /* array<int>~.NewManual */;
+   let _3 = m66(_4) /* array<int>~.NewManual */;
    let _5 = _i;
    let _6 = _3;
-   m102(_a0,_5, _6) /* Map<any, any>~.put~ */;
+   m103(_a0,_5, _6) /* Map<any, any>~.put~ */;
    let _7 = 0;
    let _8 = (_7<_i[0]);
    while (_8) {
     let _9 = _7;
-    let _12 = m95(_i,_9) /* array<int>~.get */;
+    let _12 = m96(_i,_9) /* array<int>~.get */;
     let _11 = _12 === null;
     let _10;
     if (_11) {
@@ -1821,7 +1830,7 @@ function performJsEscape(src) {
     if (_11) {
      let _13 = _7;
      let _14 = _10;
-     m69(_3,_13, _14) /* array<int>~.set~ */;
+     m71(_3,_13, _14) /* array<int>~.set~ */;
     }
     _7 = _capi(_7+(1));
     let _16 = (_7<_i[0]);
@@ -1829,56 +1838,56 @@ function performJsEscape(src) {
    }
    return _3;
   }
-  function m104(_i, _a0, _a1) {// lamcall35)
-   let _4 = m38(_i,_a0, _a1) /* 36.bouncelam$500 (int sum, String add) */;
+  function m105(_i, _a0, _a1) {// lamcall35)
+   let _4 = m42(_i,_a0, _a1) /* 36.bouncelam$500 (int sum, String add) */;
    return _4;
   }
-  function m105(_i, _a0) {// lamcall39)
-   m43(_i,_a0) /* 40.bouncelam$500 (String part) */;
+  function m106(_i, _a0) {// lamcall39)
+   m47(_i,_a0) /* 40.bouncelam$500 (String part) */;
    return undefined;
   }
-  function m106(_i, _a0) {// Buffer<int>~.MakeCopyM)
+  function m107(_i, _a0) {// Buffer<int>~.MakeCopyM)
    let _3 = [..._i];
    let _4 = _i;
    let _5 = _3;
-   m102(_a0,_4, _5) /* Map<any, any>~.put~ */;
+   m103(_a0,_4, _5) /* Map<any, any>~.put~ */;
    return _3;
   }
-  function m108(_a0, _a1) {// mmothello.ServerToClient.NewManual)
+  function m109(_a0, _a1) {// mmothello.ServerToClient.NewManual)
    let _2 = [_a0, _a1];
    return _2;
   }
-  function m109(_i) {// List<Entry<any, any>>~.getSize)
+  function m110(_i) {// List<Entry<any, any>>~.getSize)
    return _i[1];
   }
-  function m110(_i, _a0) {// List<Entry<any, any>>~.get)
+  function m111(_i, _a0) {// List<Entry<any, any>>~.get)
    let _4 = _a0;
-   let _5 = m118(_i[0],_4) /* array<Entry<any, any>>~.get */;
+   let _5 = m119(_i[0],_4) /* array<Entry<any, any>>~.get */;
    return _5;
   }
-  function m111(_i) {// Entry<any, any>.getKey)
+  function m112(_i) {// Entry<any, any>.getKey)
    return _i[0];
   }
-  function m112(_i) {// Entry<any, any>.getValue)
+  function m113(_i) {// Entry<any, any>.getValue)
    return _i[1];
   }
-  function m113(_i, _a0) {// Map<any, any>~.putNew~)
-   let _4 = m119() /* Entries<any, any>~.NewManual */;
+  function m114(_i, _a0) {// Map<any, any>~.putNew~)
+   let _4 = m120() /* Entries<any, any>~.NewManual */;
    let _5 = _a0;
    let _6 = _4;
-   m120(_i[0],_5, _6) /* array<Entries<any, any>~>~.set~ */;
+   m121(_i[0],_5, _6) /* array<Entries<any, any>~>~.set~ */;
    return _4;
   }
-  function m114(_i, _a0, _a1) {// Entries<any, any>~.put~)
+  function m115(_i, _a0, _a1) {// Entries<any, any>~.put~)
    let _5 = _a0;
    let _6 = _a1;
-   let _4 = m121(_5, _6) /* Entry<any, any>.NewManual */;
-   let _7 = m122(_i[0],) /* List<Entry<any, any>>~.getLen */;
+   let _4 = m122(_5, _6) /* Entry<any, any>.NewManual */;
+   let _7 = m123(_i[0],) /* List<Entry<any, any>>~.getLen */;
    let _8 = 0;
    let _9 = (_8<_7);
    while (_9) {
     let _11 = _8;
-    let _12 = m110(_i[0],_11) /* List<Entry<any, any>>~.get */;
+    let _12 = m111(_i[0],_11) /* List<Entry<any, any>>~.get */;
     let _14 = _12 === null;
     let _13;
     if (_14) {
@@ -1888,13 +1897,13 @@ function performJsEscape(src) {
      _13 = _12;
     }
     let _10 = _13;
-    let _15 = m111(_10,) /* Entry<any, any>.getKey */;
+    let _15 = m112(_10,) /* Entry<any, any>.getKey */;
     let _19 = (_15) === (_a0);
     if (_19) {
      let _16 = _8;
      let _17 = _4;
-     m123(_i[0],_16, _17) /* List<Entry<any, any>>~.set~ */;
-     let _18 = m112(_10,) /* Entry<any, any>.getValue */;
+     m124(_i[0],_16, _17) /* List<Entry<any, any>>~.set~ */;
+     let _18 = m113(_10,) /* Entry<any, any>.getValue */;
      return _18;
     }
     _8 = _capi(_8+(1));
@@ -1902,16 +1911,16 @@ function performJsEscape(src) {
     _9 = _21;
    }
    let _22 = _4;
-   m124(_i[0],_22) /* List<Entry<any, any>>~.add~ */;
+   m125(_i[0],_22) /* List<Entry<any, any>>~.add~ */;
    let _23 = null;
    return _23;
   }
-  function m115(_i, _a0) {// array<Entries<any, any>~>~.forEachEx)
+  function m116(_i, _a0) {// array<Entries<any, any>~>~.forEachEx)
    let _3 = 0;
    let _4 = (_3<_i[0]);
    while (_4) {
     let _6 = _3;
-    let _8 = m100(_i,_6) /* array<Entries<any, any>~>~.get */;
+    let _8 = m101(_i,_6) /* array<Entries<any, any>~>~.get */;
     let _7 = _8 === null;
     let _5;
     if (_7) {
@@ -1924,23 +1933,23 @@ function performJsEscape(src) {
     }
     if (_7) {
      let _9 = _5;
-     m125(_a0,_9) /* lamcall54 */;
+     m126(_a0,_9) /* lamcall54 */;
     }
     _3 = _capi(_3+(1));
     let _11 = (_3<_i[0]);
     _4 = _11;
    }
   }
-  function m116(_i, _a0) {// 55.bouncelam$500~ (Entries<any, any>~ oldEnt))
+  function m117(_i, _a0) {// 55.bouncelam$500~ (Entries<any, any>~ oldEnt))
    let _4 = _a0;
-   m117(_i[1],_4) /* 47.loclam$lambda<void, Entries<any, any>~>$500~ (Entries<any, any>~ oldEnt) */;
+   m118(_i[1],_4) /* 47.loclam$lambda<void, Entries<any, any>~>$500~ (Entries<any, any>~ oldEnt) */;
    return undefined;
   }
-  function m117(_i, _a0) {// 47.loclam$lambda<void, Entries<any, any>~>$500~ (Entries<any, any>~ oldEnt))
+  function m118(_i, _a0) {// 47.loclam$lambda<void, Entries<any, any>~>$500~ (Entries<any, any>~ oldEnt))
    let _5 = [(500), _i];
-   m126(_a0,_5) /* Entries<any, any>~.forEach */;
+   m127(_a0,_5) /* Entries<any, any>~.forEach */;
   }
-  function m118(_i, _a0) {// array<Entry<any, any>>~.get)
+  function m119(_i, _a0) {// array<Entry<any, any>>~.get)
    let _5 = (_a0<(0));
    if (_5) {
     let _4 = null;
@@ -1954,12 +1963,12 @@ function performJsEscape(src) {
    let _8 = _i[1 + _a0];
    return _8;
   }
-  function m119() {// Entries<any, any>~.NewManual)
-   let _1 = m129() /* List<Entry<any, any>>~.NewManual */;
+  function m120() {// Entries<any, any>~.NewManual)
+   let _1 = m130() /* List<Entry<any, any>>~.NewManual */;
    let _0 = [_1];
    return _0;
   }
-  function m120(_i, _a0, _a1) {// array<Entries<any, any>~>~.set~)
+  function m121(_i, _a0, _a1) {// array<Entries<any, any>~>~.set~)
    let _6 = (_a0<(0));
    if (_6) {
     let _5 = null;
@@ -1972,14 +1981,14 @@ function performJsEscape(src) {
    }
    _i[1 + _a0] = _a1;
   }
-  function m121(_a0, _a1) {// Entry<any, any>.NewManual)
+  function m122(_a0, _a1) {// Entry<any, any>.NewManual)
    let _2 = [_a0, _a1];
    return _2;
   }
-  function m122(_i) {// List<Entry<any, any>>~.getLen)
+  function m123(_i) {// List<Entry<any, any>>~.getLen)
    return _i[1];
   }
-  function m123(_i, _a0, _a1) {// List<Entry<any, any>>~.set~)
+  function m124(_i, _a0, _a1) {// List<Entry<any, any>>~.set~)
    let _6 = (_a0>=_i[1]);
    if (_6) {
     let _5 = null;
@@ -1987,37 +1996,32 @@ function performJsEscape(src) {
    }
    let _7 = _a0;
    let _8 = _a1;
-   let _9 = m130(_i[0],_7, _8) /* array<Entry<any, any>>~.set~ */;
+   let _9 = m131(_i[0],_7, _8) /* array<Entry<any, any>>~.set~ */;
    return _9;
   }
-  function m124(_i, _a0) {// List<Entry<any, any>>~.add~)
-   let _4 = m131(_i[0],) /* array<Entry<any, any>>~.getLength */;
+  function m125(_i, _a0) {// List<Entry<any, any>>~.add~)
+   let _4 = m132(_i[0],) /* array<Entry<any, any>>~.getLength */;
    let _11 = (_i[1]===_4);
    if (_11) {
-    let _6 = m131(_i[0],) /* array<Entry<any, any>>~.getLength */;
+    let _6 = m132(_i[0],) /* array<Entry<any, any>>~.getLength */;
     let _8 = _capi(_6*(2));
-    let _5 = m132(_8) /* array<Entry<any, any>>~.NewManual */;
+    let _5 = m133(_8) /* array<Entry<any, any>>~.NewManual */;
     let _10 = [(500), _i, _5];
-    m133(_i[0],_10) /* array<Entry<any, any>>~.forEachi */;
+    m134(_i[0],_10) /* array<Entry<any, any>>~.forEachi */;
     _i[0] = _5;
    }
    let _12 = _i[1];
    let _13 = _a0;
-   m130(_i[0],_12, _13) /* array<Entry<any, any>>~.set~ */;
+   m131(_i[0],_12, _13) /* array<Entry<any, any>>~.set~ */;
    _i[1] = _capi(_i[1]+(1));
   }
-  function m125(_i, _a0) {// lamcall54)
-   m116(_i,_a0) /* 55.bouncelam$500~ (Entries<any, any>~ oldEnt) */;
+  function m126(_i, _a0) {// lamcall54)
+   m117(_i,_a0) /* 55.bouncelam$500~ (Entries<any, any>~ oldEnt) */;
    return undefined;
   }
-  function m126(_i, _a0) {// Entries<any, any>~.forEach)
+  function m127(_i, _a0) {// Entries<any, any>~.forEach)
    let _3 = _a0;
-   m136(_i[0],_3) /* List<Entry<any, any>>~.forEach */;
-  }
-  function m127(_i, _a0) {// 57.bouncelam$500~ (Entry<any, any> ent))
-   let _4 = _a0;
-   m128(_i[1],_4) /* 47.loclam$lambda<void, Entry<any, any>>$500~ (Entry<any, any> ent) */;
-   return undefined;
+   m137(_i[0],_3) /* List<Entry<any, any>>~.forEach */;
   }
 
 function MAIN(_binding, ...inArgs) {
@@ -2027,20 +2031,42 @@ function MAIN(_binding, ...inArgs) {
    _doLog('--> [s 14]', `Client started`);
    let _2 = _0;
    let _1 = m1(_2) /* mmothello.Client~.NewManual */;
-   let _4 = [(500), _1];
-   return _4;
+   let _3 = m3() /* mmothello.ClientToServer.newRequestFullUpdate */;
+   m2(_3) /* mmothello.Client.ClientBinding~.postToServer */;
+   let _5 = [(500), _1];
+   return _5;
   }
-  function m2(_i) {// 15.bouncelam$500 ())
+  function m2(_a0) {// mmothello.Client.ClientBinding~.postToServer)
+   m7(_a0,) /* mmothello.ClientToServer.Write */;
+    _io.flushDirect(101);
+   let _1 = _io.ir.getIB();
+   if (_1) {
+    return undefined;
+   }
+   let _2 = null;
+   return _2;
+  }
+  function m4(_i) {// 16.bouncelam$500 ())
    let _3 = _i[1];
-   m3(_3) /* 10.loclam$lambda<void>?$500 (mmothello.Client~ cl) */;
+   m5(_3) /* 10.loclam$lambda<void>?$500 (mmothello.Client~ cl) */;
    return undefined;
   }
-  function m3(_a0) {// 10.loclam$lambda<void>?$500 (mmothello.Client~ cl))
-   m5(_a0,) /* mmothello.Client~.update~ */;
+  function m5(_a0) {// 10.loclam$lambda<void>?$500 (mmothello.Client~ cl))
+   m9(_a0,) /* mmothello.Client~.update~ */;
   }
-  function m5(_i) {// mmothello.Client~.update~)
-   m7(_i,) /* mmothello.Client~.handleIncomingMessages~ */;
-   let _6 = m8() /* mmothello.Client.ClientBinding~.getClick */;
+  function m7(_i) {// mmothello.ClientToServer.Write)
+   _io.ow.addI8(_i[0]);
+   let _5 = (_i[0]===(0));
+   if (_5) {
+    let _4 = _i[1];
+    m11(_4,) /* mmothello.ClientToServer.OnClick.Write */;
+    return undefined;
+   }
+   return undefined;
+  }
+  function m9(_i) {// mmothello.Client~.update~)
+   m12(_i,) /* mmothello.Client~.handleIncomingMessages~ */;
+   let _6 = m13() /* mmothello.Client.ClientBinding~.getClick */;
    let _5 = _6 === null;
    let _4;
    if (_5) {
@@ -2052,31 +2078,35 @@ function MAIN(_binding, ...inArgs) {
     _4 = _6;
    }
    if (_5) {
-    let _7 = m9() /* StringBuilder~.NewManual */;
+    let _7 = m14() /* StringBuilder~.NewManual */;
     let _8 = [[12,71,111,116,32,99,108,105,99,107,32,64,32]];
-    m10(_7,_8) /* StringBuilder~.add~ */;
-    let _9 = m11(_4,) /* mmothello.Client.Click.getX */;
-    _8 = m12(_9) /* int.Stringify */;
-    m10(_7,_8) /* StringBuilder~.add~ */;
+    m15(_7,_8) /* StringBuilder~.add~ */;
+    let _9 = m16(_4,) /* mmothello.Client.Click.getX */;
+    _8 = m17(_9) /* int.Stringify */;
+    m15(_7,_8) /* StringBuilder~.add~ */;
     _8 = [[3,32,124,32]];
-    m10(_7,_8) /* StringBuilder~.add~ */;
-    let _10 = m13(_4,) /* mmothello.Client.Click.getY */;
-    _8 = m12(_10) /* int.Stringify */;
-    m10(_7,_8) /* StringBuilder~.add~ */;
-    _8 = m14(_7,) /* StringBuilder~.getResult */;
-    m15(_8,) /* String.OutputBytes */;
+    m15(_7,_8) /* StringBuilder~.add~ */;
+    let _10 = m18(_4,) /* mmothello.Client.Click.getY */;
+    _8 = m17(_10) /* int.Stringify */;
+    m15(_7,_8) /* StringBuilder~.add~ */;
+    _8 = m19(_7,) /* StringBuilder~.getResult */;
+    m20(_8,) /* String.OutputBytes */;
      _io.flushDirect(-8);
-    let _11 = m11(_4,) /* mmothello.Client.Click.getX */;
-    let _12 = m13(_4,) /* mmothello.Client.Click.getY */;
-    let _13 = m18(_11, _12) /* mmothello.ClientToServer.OnClick.NewManual */;
-    let _14 = m17(_13) /* mmothello.ClientToServer.newOnClick */;
-    m16(_14) /* mmothello.Client.ClientBinding~.postToServer */;
+    let _11 = m16(_4,) /* mmothello.Client.Click.getX */;
+    let _12 = m18(_4,) /* mmothello.Client.Click.getY */;
+    let _13 = m22(_11, _12) /* mmothello.ClientToServer.OnClick.NewManual */;
+    let _14 = m21(_13) /* mmothello.ClientToServer.newOnClick */;
+    m2(_14) /* mmothello.Client.ClientBinding~.postToServer */;
    }
   }
-  function m7(_i) {// mmothello.Client~.handleIncomingMessages~)
+  function m11(_i) {// mmothello.ClientToServer.OnClick.Write)
+   _io.ow.addI32(_i[0]);
+   _io.ow.addI32(_i[1]);
+  }
+  function m12(_i) {// mmothello.Client~.handleIncomingMessages~)
    let _4 = true;
    while (_4) {
-    let _5 = m19() /* mmothello.Client.ClientBinding~.getIncomingMessage */;
+    let _5 = m23() /* mmothello.Client.ClientBinding~.getIncomingMessage */;
     let _7 = _5 === null;
     let _6;
     if (_7) {
@@ -2086,10 +2116,10 @@ function MAIN(_binding, ...inArgs) {
      _6 = _5;
     }
     let _8 = _6;
-    let _9 = m9() /* StringBuilder~.NewManual */;
+    let _9 = m14() /* StringBuilder~.NewManual */;
     let _10 = [[16,77,121,32,108,111,99,97,108,32,105,100,32,105,115,58,32]];
-    m10(_9,_10) /* StringBuilder~.add~ */;
-    let _11 = m20() /* mmothello.Client.ClientBinding~.getLocalId */;
+    m15(_9,_10) /* StringBuilder~.add~ */;
+    let _11 = m24() /* mmothello.Client.ClientBinding~.getLocalId */;
     let _13 = _11 === null;
     let _12;
     if (_13) {
@@ -2098,12 +2128,12 @@ function MAIN(_binding, ...inArgs) {
     else {
      _12 = _11;
     }
-    _10 = m21(_12) /* byte.Stringify */;
-    m10(_9,_10) /* StringBuilder~.add~ */;
-    _10 = m14(_9,) /* StringBuilder~.getResult */;
-    m15(_10,) /* String.OutputBytes */;
+    _10 = m25(_12) /* byte.Stringify */;
+    m15(_9,_10) /* StringBuilder~.add~ */;
+    _10 = m19(_9,) /* StringBuilder~.getResult */;
+    m20(_10,) /* String.OutputBytes */;
      _io.flushDirect(-8);
-    let _16 = m22(_8,) /* mmothello.ServerToClient.getRefreshBoard */;
+    let _16 = m26(_8,) /* mmothello.ServerToClient.getRefreshBoard */;
     let _15 = _16 === null;
     let _14;
     if (_15) {
@@ -2124,20 +2154,20 @@ function MAIN(_binding, ...inArgs) {
       while (_23) {
        let _24 = _18;
        let _25 = _21;
-       let _26 = m23(_i[1],_24, _25) /* mmothello.Board~.get */;
+       let _26 = m27(_i[1],_24, _25) /* mmothello.Board~.get */;
        let _27 = _18;
        let _28 = _21;
-       let _29 = m24(_14,_27, _28) /* mmothello.Board.get */;
+       let _29 = m28(_14,_27, _28) /* mmothello.Board.get */;
        let _36 = (_26!==_29);
        if (_36) {
         let _30 = _18;
         let _31 = _21;
         let _32 = _29;
-        m25(_30, _31, _32) /* mmothello.Client.ClientBinding~.setBoard */;
+        m29(_30, _31, _32) /* mmothello.Client.ClientBinding~.setBoard */;
         let _33 = _18;
         let _34 = _21;
         let _35 = _29;
-        m26(_i[1],_33, _34, _35) /* mmothello.Board~.set~ */;
+        m30(_i[1],_33, _34, _35) /* mmothello.Board~.set~ */;
         _17 = true;
        }
        _21 = _capi(_21+(1));
@@ -2149,7 +2179,7 @@ function MAIN(_binding, ...inArgs) {
       _20 = _42;
      }
      if (_17) {
-      let _45 = m20() /* mmothello.Client.ClientBinding~.getLocalId */;
+      let _45 = m24() /* mmothello.Client.ClientBinding~.getLocalId */;
       let _44 = _45 === null;
       let _43;
       if (_44) {
@@ -2170,26 +2200,26 @@ function MAIN(_binding, ...inArgs) {
          let _52 = _46;
          let _53 = _49;
          let _54 = _43;
-         let _55 = m27(_i[1],_52, _53, _54) /* mmothello.Board~.isLegalMove~ */;
+         let _55 = m31(_i[1],_52, _53, _54) /* mmothello.Board~.isLegalMove~ */;
          let _56 = _46;
          let _57 = _49;
-         let _58 = m23(_i[2],_56, _57) /* mmothello.Board~.get */;
+         let _58 = m27(_i[2],_56, _57) /* mmothello.Board~.get */;
          let _60 = (_58!==(0));
          let _70 = (_55!==_60);
          if (_70) {
           let _61 = _46;
           let _62 = _49;
           let _63 = _55;
-          m28(_61, _62, _63) /* mmothello.Client.ClientBinding~.setLegality */;
+          m32(_61, _62, _63) /* mmothello.Client.ClientBinding~.setLegality */;
           if (_55) {
            let _64 = _46;
            let _65 = _49;
-           m26(_i[2],_64, _65, (1)) /* mmothello.Board~.set~ */;
+           m30(_i[2],_64, _65, (1)) /* mmothello.Board~.set~ */;
           }
           else {
            let _67 = _46;
            let _68 = _49;
-           m26(_i[2],_67, _68, (0)) /* mmothello.Board~.set~ */;
+           m30(_i[2],_67, _68, (0)) /* mmothello.Board~.set~ */;
           }
          }
          _49 = _capi(_49+(1));
@@ -2209,54 +2239,44 @@ function MAIN(_binding, ...inArgs) {
     _4 = (true);
    }
   }
-  function m8() {// mmothello.Client.ClientBinding~.getClick)
+  function m141(_i) {// lamcall14)
+   m4(_i,) /* 16.bouncelam$500 () */;
+   return undefined;
+  }
+  function m13() {// mmothello.Client.ClientBinding~.getClick)
     _io.flushDirect(100);
    let _0 = _io.ir.getIB();
    if (_0) {
-    let _1 = m29() /* mmothello.Client.Click.Read */;
+    let _1 = m33() /* mmothello.Client.Click.Read */;
     return _1;
    }
    let _2 = null;
    return _2;
   }
-  function m140(_i) {// lamcall14)
-   m2(_i,) /* 15.bouncelam$500 () */;
-   return undefined;
-  }
-  function m15(_i) {// String.OutputBytes)
-   let _2 = m46(_i[0],) /* Buffer<int>~.getLen */;
+  function m20(_i) {// String.OutputBytes)
+   let _2 = m50(_i[0],) /* Buffer<int>~.getLen */;
    let _3 = 0;
    let _4 = (_3<_2);
    while (_4) {
     let _5 = _3;
-    let _6 = m48(_i,_5) /* String.getChar */;
-    m47(_6) /* int.OutputUnicodeBytes */;
+    let _6 = m52(_i,_5) /* String.getChar */;
+    m51(_6) /* int.OutputUnicodeBytes */;
     _3 = _capi(_3+(1));
     let _8 = (_3<_2);
     _4 = _8;
    }
   }
-  function m16(_a0) {// mmothello.Client.ClientBinding~.postToServer)
-   m49(_a0,) /* mmothello.ClientToServer.Write */;
-    _io.flushDirect(101);
-   let _1 = _io.ir.getIB();
-   if (_1) {
-    return undefined;
-   }
-   let _2 = null;
-   return _2;
-  }
-  function m19() {// mmothello.Client.ClientBinding~.getIncomingMessage)
+  function m23() {// mmothello.Client.ClientBinding~.getIncomingMessage)
     _io.flushDirect(102);
    let _0 = _io.ir.getIB();
    if (_0) {
-    let _1 = m51() /* mmothello.ServerToClient.Read */;
+    let _1 = m53() /* mmothello.ServerToClient.Read */;
     return _1;
    }
    let _2 = null;
    return _2;
   }
-  function m20() {// mmothello.Client.ClientBinding~.getLocalId)
+  function m24() {// mmothello.Client.ClientBinding~.getLocalId)
     _io.flushDirect(105);
    let _0 = _io.ir.getIB();
    if (_0) {
@@ -2266,7 +2286,7 @@ function MAIN(_binding, ...inArgs) {
    let _2 = null;
    return _2;
   }
-  function m25(_a0, _a1, _a2) {// mmothello.Client.ClientBinding~.setBoard)
+  function m29(_a0, _a1, _a2) {// mmothello.Client.ClientBinding~.setBoard)
    _io.ow.addI32(_a0);
    _io.ow.addI32(_a1);
    _io.ow.addI8(_a2);
@@ -2278,7 +2298,7 @@ function MAIN(_binding, ...inArgs) {
    let _4 = null;
    return _4;
   }
-  function m28(_a0, _a1, _a2) {// mmothello.Client.ClientBinding~.setLegality)
+  function m32(_a0, _a1, _a2) {// mmothello.Client.ClientBinding~.setLegality)
    _io.ow.addI32(_a0);
    _io.ow.addI32(_a1);
    _io.ow.addIB(_a2);
@@ -2290,13 +2310,13 @@ function MAIN(_binding, ...inArgs) {
    let _4 = null;
    return _4;
   }
-  function m29() {// mmothello.Client.Click.Read)
+  function m33() {// mmothello.Client.Click.Read)
    let _0 = _io.ir.getI32();
    let _1 = _io.ir.getI32();
    let _2 = [_0, _1];
    return _2;
   }
-  function m47(_a0) {// int.OutputUnicodeBytes)
+  function m51(_a0) {// int.OutputUnicodeBytes)
    let _2 = _capi((127)&_a0);
    let _4 = (_2===_a0);
    if (_4) {
@@ -2308,7 +2328,7 @@ function MAIN(_binding, ...inArgs) {
    let _18 = (_6===_a0);
    if (_18) {
     let _7 = _a0;
-    let _10 = m84(_7, (6)) /* int.shiftRight */;
+    let _10 = m86(_7, (6)) /* int.shiftRight */;
     let _11 = _capi((192)|_10);
     let _12 = _capb(_11);
     _io.ow.addI8(_12);
@@ -2322,12 +2342,12 @@ function MAIN(_binding, ...inArgs) {
    let _40 = (_20===_a0);
    if (_40) {
     let _21 = _a0;
-    let _24 = m84(_21, (12)) /* int.shiftRight */;
+    let _24 = m86(_21, (12)) /* int.shiftRight */;
     let _25 = _capi((224)|_24);
     let _26 = _capb(_25);
     _io.ow.addI8(_26);
     let _27 = _a0;
-    let _29 = m84(_27, (6)) /* int.shiftRight */;
+    let _29 = m86(_27, (6)) /* int.shiftRight */;
     let _32 = _capi(_29&(63));
     let _33 = _capi((128)|_32);
     let _34 = _capb(_33);
@@ -2339,18 +2359,18 @@ function MAIN(_binding, ...inArgs) {
     return undefined;
    }
    let _41 = _a0;
-   let _44 = m84(_41, (18)) /* int.shiftRight */;
+   let _44 = m86(_41, (18)) /* int.shiftRight */;
    let _45 = _capi((240)|_44);
    let _46 = _capb(_45);
    _io.ow.addI8(_46);
    let _47 = _a0;
-   let _49 = m84(_47, (12)) /* int.shiftRight */;
+   let _49 = m86(_47, (12)) /* int.shiftRight */;
    let _52 = _capi(_49&(63));
    let _53 = _capi((128)|_52);
    let _54 = _capb(_53);
    _io.ow.addI8(_54);
    let _55 = _a0;
-   let _57 = m84(_55, (6)) /* int.shiftRight */;
+   let _57 = m86(_55, (6)) /* int.shiftRight */;
    let _60 = _capi(_57&(63));
    let _61 = _capi((128)|_60);
    let _62 = _capb(_61);
@@ -2360,39 +2380,29 @@ function MAIN(_binding, ...inArgs) {
    let _67 = _capb(_66);
    _io.ow.addI8(_67);
   }
-  function m49(_i) {// mmothello.ClientToServer.Write)
-   _io.ow.addI8(_i[0]);
-   let _3 = _i[1];
-   m86(_3,) /* mmothello.ClientToServer.OnClick.Write */;
-   return undefined;
-  }
-  function m51() {// mmothello.ServerToClient.Read)
+  function m53() {// mmothello.ServerToClient.Read)
    let _0 = _io.ir.getI8();
-   let _1 = m87() /* mmothello.Board.Read */;
+   let _1 = m88() /* mmothello.Board.Read */;
    let _2 = _1;
-   let _3 = m88(_2) /* mmothello.ServerToClient.newRefreshBoard */;
+   let _3 = m89(_2) /* mmothello.ServerToClient.newRefreshBoard */;
    return _3;
   }
-  function m86(_i) {// mmothello.ClientToServer.OnClick.Write)
-   _io.ow.addI32(_i[0]);
-   _io.ow.addI32(_i[1]);
-  }
-  function m87() {// mmothello.Board.Read)
-   let _0 = m107() /* Buffer<byte>~.ReadM */;
+  function m88() {// mmothello.Board.Read)
+   let _0 = m108() /* Buffer<byte>~.ReadM */;
    let _1 = [_0];
    return _1;
   }
-  function m107() {// Buffer<byte>~.ReadM)
+  function m108() {// Buffer<byte>~.ReadM)
    let _0 = _io.ir.getI32();
    let _2 = _0;
-   let _1 = m6(_2) /* Buffer<byte>~.NewManual */;
+   let _1 = m10(_2) /* Buffer<byte>~.NewManual */;
    let _3 = 0;
    let _4 = (_3<_0);
    while (_4) {
     let _5 = _io.ir.getI8();
     let _6 = _3;
     let _7 = _5;
-    m53(_1,_6, _7) /* Buffer<byte>~.set~ */;
+    m55(_1,_6, _7) /* Buffer<byte>~.set~ */;
     _3 = _capi(_3+(1));
     let _9 = (_3<_0);
     _4 = _9;
@@ -2401,7 +2411,7 @@ function MAIN(_binding, ...inArgs) {
   }
 const _re = m0(null, ...inArgs);
 if (_re) {
-  _re.call = () => m140(_re, _re[0]);
+  _re.call = () => m141(_re, _re[0]);
 }
 return _re;
 }
@@ -2487,4 +2497,4 @@ break;
 exports.Types = {
   
 };
-exports.VERSION = '1109269550';
+exports.VERSION = '1006514601';

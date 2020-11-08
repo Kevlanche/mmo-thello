@@ -50,6 +50,7 @@ async function init() {
 
     root.innerHTML = '';
 
+
     setStatus('Connecting');
     connected = false;
     playerIdToColors = {};
@@ -58,12 +59,21 @@ async function init() {
 
     const incomingMessages = [];
     const localSocket = socket;
+
+    const getLocalId = () => {
+      const mapped = playerIdToColors[playerId];
+      if (!mapped) {
+        return null;
+      }
+      return mapped;
+    };
     socket.onopen = function (event) {
       if (socket === localSocket) {
         setStatus('Connected');
         connected = true;
 
         let lastClicked = {};
+        const popup = document.createElement('div');
 
         for (let y = 0; y < 16; y++) {
           for (let x = 0; x < 16; x++) {
@@ -85,9 +95,29 @@ async function init() {
                 client.call();
               }
             };
+            cell.onmouseenter = () => {
+              const player = cell.getAttribute('data-player');
+              console.log('onMosueEneter on color:', player, playerIdToColors);
+              if (player) {
+                const owner = Object.keys(playerIdToColors).find(pid => playerIdToColors[pid] == player);
+                console.log('matching entry:', owner);
+                if (owner) {
+                  popup.style.display = 'flex';
+                  popup.innerText = `Owned by ${owner}`
+                }
+              }
+
+            }
+            cell.onmouseleave = () => {
+              popup.style.display = 'none';
+            }
             root.appendChild(cell);
           }
         }
+
+        popup.className = 'popup';
+        root.appendChild(popup);
+
 
         client = Client({
           getIncomingMessage: () => incomingMessages.shift() || null,
@@ -112,8 +142,24 @@ async function init() {
           },
           setBoard: (x, y, color) => {
             const hit = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`);
+            const local = getLocalId();
+            console.log('comparing', local, 'with', color);
+            if (color === local) {
+              // Block for 5 seconds
+              const timeouter = document.querySelector('#timeouter');
+              timeouter.classList.add('instant');
+              timeouter.style.backgroundColor = 'red';
+              timeouter.style.height = '100%';
+
+              setTimeout(() => {
+                timeouter.classList.remove('instant');
+                timeouter.style.height = '0%';
+                timeouter.style.backgroundColor = 'green';
+              }, 2000)
+            }
             if (hit) {
               hit.style.backgroundColor = playerColors[Math.abs(color) % playerColors.length];
+              hit.setAttribute('data-player', color);
             }
           },
           setLegality: (x, y, isLegal) => {
@@ -126,13 +172,7 @@ async function init() {
               }
             }
           },
-          getLocalId: () => {
-            const mapped = playerIdToColors[playerId];
-            if (!mapped) {
-              return null;
-            }
-            return mapped;
-          }
+          getLocalId,
           // foo:
         });
         clientAutoRunner = setInterval(() => {

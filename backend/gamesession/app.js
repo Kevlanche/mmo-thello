@@ -59,10 +59,9 @@ exports.handler = async event => {
     return { statusCode: 200, body: 'Some other manager started at the same time' };
   }
 
-  console.log('STARTED MANAGER', managerSecret);
+  let lastKnownLeader = null;
 
   const sleep = nextSessionId - Date.now();
-  console.log('Sleeping for', sleep, 'ms');
 
 
   console.log('connecting to websocket...');
@@ -95,6 +94,9 @@ exports.handler = async event => {
       return ret && ret.data;
     },
     getLastIncomingMessageOwner: () => lastReceivedMessage && lastReceivedMessage.pid,
+    reportLeader: (leader) => {
+      lastKnownLeader = leader;
+    },
   });
   socket.on('open', function open() {
     console.log('websocket connected!');
@@ -167,6 +169,41 @@ exports.handler = async event => {
     Key: managerKey
   }).promise();
   console.log('Session', sessionId, 'done, closing');
+
+  if (lastKnownLeader !== null) {
+    const now = Date.now();
+    const today = now - (now % (1000 * 60 * 60 * 24) );
+
+    let currLeaderboard;
+    try {
+      currLeaderboard = JSON.parse(
+        (await s3.getObject({
+          Bucket: process.env.BUCKET_NAME,
+          Key: 'leaderboard'
+        }).promise()).Body
+      );
+    } catch (e) {
+
+    }
+
+    if (!currLeaderboard || !currLeaderboard.day !== today) {
+      currLeaderboard = {
+        day: today,
+        winners: {}
+      };
+    }
+    const winnerName = Object.keys(pidToColors).find(name => pidToColors[name] === lastKnownLeader);
+    if (winnerName) {
+      currLeaderboard.winners[winnerName] = (currLeaderboard.winners[winnerName] || 0) + 1;
+      await s3.putObject({
+        Bucket: process.env.BUCKET_NAME,
+        Key: 'leaderboard',
+        Body: JSON.stringify(currLeaderboard),
+        CacheControl: 'no-store',
+        ACL: 'public-read',
+      }).promise();
+    }
+  }
 
   socket.close();
 
