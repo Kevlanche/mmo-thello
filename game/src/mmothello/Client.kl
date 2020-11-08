@@ -11,30 +11,54 @@ binding ClientBinding {
   void? postToServer(ClientToServer msg);
   ServerToClient? getIncomingMessage();
   void? setBoard(int x, int y, byte color);
+  void? setLegality(int x, int y, bool isLegal);
+
+  byte? getLocalId();
 }
 
 worker Client {
   ClientBinding~ bind;
-  Board lastBoard;
+  Board~ lastBoard;
+  Board~ legalityState;
 
   new(ClientBinding~ bind)
-    lastBoard: new();
+    lastBoard: new()
+    , legalityState: new();
 
   void? handleIncomingMessages~() {
     while (true) {
       $msg = bind.getIncomingMessage() ?: return;
+      trace "My local id is: $(bind.getLocalId() ?: 0b)";
       if ($board = msg.refreshBoard) {
 
+        $anyChanges = false;
         for ($x = 0; < 16) {
           for ($y = 0; < 16) {
             $known = lastBoard.get(x, y);
             $incoming = board.get(x, y);
             if (known != incoming) {
               bind.setBoard(x, y, incoming);
+              lastBoard.set(x, y, incoming);
+              anyChanges = true;
             }
           }
         }
-        lastBoard = board;
+        if (anyChanges) {
+          if ($myId = bind.getLocalId()) {
+            for ($x = 0; < 16) {
+              for ($y = 0; < 16) {
+                $isLegal = lastBoard.isLegalMove(x, y, myId);
+                $wasLegal = legalityState.get(x, y) != 0b;
+                if (isLegal != wasLegal) {
+                  bind.setLegality(x, y, isLegal);
+
+                  if (isLegal): legalityState.set(x, y, 1b);
+                  else: legalityState.set(x, y, 0b);
+                }
+              }
+            }
+          }
+        }
       } else {
         trace "ERR unknown message type";
       }

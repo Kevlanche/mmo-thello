@@ -11,7 +11,7 @@ function setStatus(stat) {
   status.innerText = `Status: ${stat}`;
 }
 
-const sessionLengthMs = 1000 * 60; // * 5;
+const sessionLengthMs = 1000 * 60 * 5;
 let bgBackgroundTimer;
 
 const playerId = window.location.hash.slice(1);
@@ -29,6 +29,7 @@ async function init() {
   let client;
   let clientAutoRunner;
   let inactivityCounter = 0;
+  let playerIdToColors = {};
 
   setInterval(() => {
     if (socket && socket.bufferedAmount > 0) {
@@ -51,6 +52,7 @@ async function init() {
 
     setStatus('Connecting');
     connected = false;
+    playerIdToColors = {};
     socket = new WebSocket("wss://qnrk3f4ghb.execute-api.eu-central-1.amazonaws.com/Prod?agent=foo");
     // socket.binaryType = 'arraybuffer';
 
@@ -109,18 +111,28 @@ async function init() {
             socket.send(outgoing);
           },
           setBoard: (x, y, color) => {
-            console.log('setBoard:', x, y, color);
             const hit = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`);
             if (hit) {
-              // const newBg = `#${`${Math.abs(color).toString(16)}`.padStart(6, '0')}`;
-              // console.log(newBg);
               hit.style.backgroundColor = playerColors[Math.abs(color) % playerColors.length];
             }
-            // cell';
-            // cell.setAttribute('data-x', x);cw
-            // cell.setAttribute('data-y', y);
-            // cell.style.setProp
           },
+          setLegality: (x, y, isLegal) => {
+            const hit = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`);
+            if (hit) {
+              if (isLegal) {
+                hit.classList.add('legal');
+              } else {
+                hit.classList.remove('legal');
+              }
+            }
+          },
+          getLocalId: () => {
+            const mapped = playerIdToColors[playerId];
+            if (!mapped) {
+              return null;
+            }
+            return mapped;
+          }
           // foo:
         });
         clientAutoRunner = setInterval(() => {
@@ -150,6 +162,10 @@ async function init() {
         }
       } else if (parsed.type === 'meta') {
         console.log('onMetaMessage:', parsed);
+        const { playerColor, playerName } = parsed;
+        if (playerColor !== undefined && playerName !== undefined) {
+          playerIdToColors[playerName] = playerColor;
+        }
       }
     }
 

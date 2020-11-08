@@ -243,7 +243,7 @@ Resources:
       Handler: app.handler
       MemorySize: 256
       Runtime: nodejs12.x
-      Timeout: 65
+      Timeout: 320
       Environment:
         Variables:
           BUCKET_NAME: !Ref BucketName

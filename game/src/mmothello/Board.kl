@@ -6,4 +6,72 @@ struct Board {
 
   void set~(int x, int y, byte color): colors.set(x + (y * 16), color);
   byte get(int x, int y): colors.get(x + (y * 16));
+
+  bool hasAnyPieces(byte player) {
+    for ($x = 0; < 16) {
+      for ($y = 0; < 16) {
+        if (get(x, y) == player) {
+          .bool(int, int) opponentAt = (dx, dy) -> {
+            $col = get(x + dx, y + dy);
+            return (col != player) && (col != 0b);
+          };
+          if (
+            (opponentAt(-1, 0))
+            || (opponentAt(1, 0))
+            || (opponentAt(0, -1))
+            || (opponentAt(0, 1))
+            || (opponentAt(-1, -1))
+            || (opponentAt(1, -1))
+            || (opponentAt(-1, 1))
+            || (opponentAt(1, 1))
+          ): return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  bool isLegalMove~(int x, int y, byte player) {
+    if (get(x, y) == player): return false;
+
+    if (hasAnyPieces(player) == false) {
+      return (x >= 4) && (x <= 11) && (y >= 4) && (y <= 11);
+    }
+
+    if (get(x, y) != 0b): return false;
+
+    .bool(int, int) doSearch = (dx, dy) -> {
+      $curr = get(x + dx, y + dy);
+      if ((curr == 0b) || (curr == player)) {
+        return false;
+      }
+      return searchAndFlip(x + (2 * dx), y + (2 * dy), dx, dy, player, true);
+    };
+
+    return doSearch(1, 0)
+      || doSearch(-1, 0)
+      || doSearch(0, -1)
+      || doSearch(0, 1)
+      || doSearch(1, 1)
+      || doSearch(1, -1)
+      || doSearch(-1, 1)
+      || doSearch(-1, -1);
+  }
+
+  bool searchAndFlip~(int x, int y, int dx, int dy, byte flipColor, bool dryRun) {
+    if ((x < 0) || (x >= 16) || (y < 0) || (y >= 16)) {
+      return false;
+    }
+    $curr = get(x, y);
+    if (curr == flipColor): return true;
+    if (curr == 0b): return false;
+
+    $recursive = searchAndFlip(x + dx, y + dy, dx, dy, flipColor, dryRun);
+    if (recursive) {
+      if (dryRun == false) {
+        set(x, y, flipColor);
+      }
+    }
+    return recursive;
+  }
 }

@@ -48,9 +48,12 @@
         z-index: 1;
       }
 
-      #ping {
+      #side {
         grid-area: STAT;
+        display: grid;
       }
+
+
 
       #root {
         grid-area: GAME;
@@ -120,6 +123,23 @@
         background: #ddd;
       }
 
+      .cell.legal {
+        animation: legalMoveAnimation infinite 1s;
+        z-index: 1;
+      }
+
+      @keyframes legalMoveAnimation {
+        0% {
+          box-shadow: 0 0 2px 2px greenyellow;
+        }
+        50% {
+          box-shadow: 0 0 2px 2px white;
+        }
+        100% {
+          box-shadow: 0 0 2px 2px greenyellow;
+        }
+      }
+
       .cell.filled::after {
         content: ' ';
         border: 1px solid var(--data-color);
@@ -150,7 +170,11 @@
       <div id="root">
 
       </div>
-      <button id="ping">Ping</button>
+      <div id="side">
+
+
+        <button id="ping">Ping</button>
+      </div>
     </div>
 
 

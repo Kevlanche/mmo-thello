@@ -21,4 +21,8 @@ xxxxxxx+xxx
   * client side
 
 
-* Implement give command
+* Implement give command ✅
+
+
+* highlight illegal moves as well?
+  -> perhaps only a subset of illegal moves, the ones next to other plays

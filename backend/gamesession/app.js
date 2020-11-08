@@ -9,7 +9,7 @@ const ddb = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10', region: 
 
 const s3 = new AWS.S3({ region: process.env.AWS_REGION });
 
-const sessionLengthMs = 1000 * 60; // * 5;
+const sessionLengthMs = 1000 * 60 * 5;
 const minimumGameLength = 10 * 1000;
 exports.handler = async event => {
 
@@ -116,8 +116,16 @@ exports.handler = async event => {
       const lastMessage = pidToLastIncomsingKlMessageTime[pid];
       if (lastMessage && (Date.now() - lastMessage) <= 5000) {
         // Reject message due to "slow mode"
-        // return;
+        return;
       }
+      socket.send(JSON.stringify({
+        action: 'sendmessage',
+        target: 'client',
+        type: 'meta',
+        playerColor: pidToColors[pid],
+        playerName: pid,
+        managerSecret,
+      }));
       pidToLastIncomsingKlMessageTime[pid] = Date.now();
       incomingMessages.push({
         data: new TextEncoder().encode(payload),
