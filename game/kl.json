@@ -1,0 +1,10 @@
+{
+  "target": "JS",
+  "extraMetas": [
+    "kl.compiler.optimize false"
+  ],
+  "x-imports": true,
+  "modules": [
+    "mmothello/Game.kl/.game"
+  ]
+}

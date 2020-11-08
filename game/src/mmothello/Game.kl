@@ -1,0 +1,26 @@
+#include util/Counter
+
+binding GameBinding {
+  void? foo(Side s);
+}
+
+worker Game {
+  GameBinding~ bind;
+
+  new(GameBinding~ bind);
+
+  void? update~() {
+
+  }
+
+
+  static .void()? game(GameBinding~ bind) {
+    trace "Hello World to you!";
+    Game~ gm = new(bind);
+    return () -> {
+      // gm.update();
+
+      trace "Foo";
+    };
+  }
+}

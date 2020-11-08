@@ -1,0 +1,14 @@
+*.iml
+.idea/
+.aws-sam/
+*/dist/*
+packaged.yaml
+node_modules/
+package-lock.json
+samconfig.toml
+frontend/secrets
+.DS_Store
+
+pi/target
+.vscode/
+game/.kl/
